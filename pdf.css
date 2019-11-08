@@ -1,0 +1,44 @@
+body {
+	font-size: 8pt;
+}
+
+code {
+	background-color: #EEE;
+}
+
+pre {
+	padding: 0.5em;
+	border: 0;
+	background-color: #EEE;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0.5em 0 0 0;
+	font-size: 1.2em;
+}
+h1:first-of-type {
+	font-size: 1.6em;
+}
+
+h1 {
+	font-size: 1.4em;
+}
+
+h2, h3, h4 {
+}
+
+ul, p, pre {
+	margin: 0.5em 0;
+}
+
+ul ul {
+	margin: 0;
+}
+
+table {
+	width: 100%;
+}
+
+table, td, th {
+	border: 1px solid black;
+}
