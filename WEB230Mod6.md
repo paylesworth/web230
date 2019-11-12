@@ -241,15 +241,6 @@ document.body.addEventListener('keydown', function(event) {
 
 ---
 
-# Debouncing
-
-- some events may fire many times in a row
-  - eg. `mousemove` and `scroll`
-- can use `setTimeout` to prevent this
-- for key events use the `event.repeat` to detect repeating keys
-
----
-
 # Summary
 
 - event handlers make it possible to detect and react to external events
