@@ -6,7 +6,8 @@ const rename = require('gulp-rename');
 const replace = require('gulp-replace');
 const frontMatter = require('gulp-front-matter');
 const cache = require('gulp-cache');
-const run = require('gulp-run-command').default;
+// const run = require('gulp-run-command').default;
+const exec = require('child_process').exec;
 
 // Create PDF Notes for each slide deck
 function pdf() {
@@ -44,8 +45,11 @@ function pdf() {
 
 // Run Marp to generate the HTML slide presentations
 function marp(cb) {
-  run('gulp WEB*.md');
-  cb();
+  exec('marp WEB*.md', function(err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+  });
 }
 
 function clean(cb) {
@@ -55,5 +59,6 @@ function clean(cb) {
   return cb();
 }
 
-exports.default = parallel(pdf, marp);
+//exports.default = parallel(pdf, marp);
+exports.default = pdf;
 exports.clean = clean;
