@@ -93,57 +93,58 @@ article#presentation > svg[data-marpit-svg] > foreignObject[data-marpit-advanced
 <h1>WEB230: JavaScript 1</h1>
 <h2>Module 6: Handling Events</h2>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="2" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="2" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
 <h1>Events</h1>
 <ul>
 <li>Events are interactions with our page</li>
 <li>Often initiated by the user</li>
 <li>We can't predict when they will happen</li>
 </ul>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
+<footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="3" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="3" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
 <h1>Event Handlers</h1>
 <ul>
 <li>JavaScript code that runs when an event occurs</li>
 <li>Written as a function that can be passed to a method</li>
 </ul>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
+<footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="4" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="4" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
 <h1>Events and DOM Nodes</h1>
 <ul>
 <li>Every DOM Element node can have events associated with it</li>
-<li>use <code>addEventListener()</code></li>
+<li>use <code>.addEventListener()</code></li>
 <li>first argument is the event name such as <code>click</code></li>
 <li>second argument is a callback function (event handler)</li>
 </ul>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
+<footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="5" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
-<pre><code class="language-javascript"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">const</span> button = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'button'</span>);
-button.addEventListener(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Button clicked.'</span>);
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="5" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
+<h1>Events and DOM Nodes Continued …</h1>
+<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>const button = document.querySelector('button');
+button.addEventListener('click', function() {
+  alert('Button clicked.');
 });
 </span></span></foreignObject></svg></code></pre>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
+<footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="6" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="6" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
 <h2>Deleting an Event Handler</h2>
 <ul>
 <li>Use a named callback function</li>
 <li>This gives us a reference to the function that we can pass to <code>removeEventListener()</code></li>
 </ul>
-<pre><code class="language-javascript"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">const</span> button = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'button'</span>);
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">once</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Done.'</span>);
-  button.removeEventListener(<span class="hljs-string">'click'</span>, once);
+<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>const button = document.querySelector('button');
+function once() {
+  alert('Done.');
+  button.removeEventListener('click', once);
 }
-button.addEventListener(<span class="hljs-string">'click'</span>, once);
+button.addEventListener('click', once);
 </span></span></foreignObject></svg></code></pre>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
+<footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="7" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="7" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
 <h1>Event Objects</h1>
 <ul>
 <li>callback functions can accept a parameter called the event object</li>
@@ -153,29 +154,29 @@ button.addEventListener(<span class="hljs-string">'click'</span>, once);
 </ul>
 </li>
 <li>properties and methods vary depending on the type of event</li>
-<li>more later</li>
+<li>this parameter is usually called <code>event</code> or simply <code>e</code></li>
 </ul>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
+<footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="8" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="8" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
 <h1>Propagation</h1>
 <ul>
 <li>if an event occurs on a child element it will trigger the event handler on the parent element</li>
 <li>if both have handlers the more specific one runs first</li>
-<li><code>stopPropogation()</code> method on the event object can stop this</li>
+<li><code>event.stopPropogation()</code> method on the event object can stop this</li>
 </ul>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
+<footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="9" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="9" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
 <h2><code>target</code> Property</h2>
 <ul>
-<li>most events have a <code>target</code> property</li>
+<li>most events have an <code>event.target</code> property</li>
 <li>this is the element that the event occurred on</li>
 <li>often used to delegate event handling to parent element</li>
 </ul>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
+<footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="10" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="10" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
 <h1>Default Actions</h1>
 <ul>
 <li>some element have default actions
@@ -184,21 +185,29 @@ button.addEventListener(<span class="hljs-string">'click'</span>, once);
 </ul>
 </li>
 <li>the event handler runs before the default action</li>
-<li><code>preventDefault()</code> method can stop the default action</li>
+<li><code>event.preventDefault()</code> method can stop the default action</li>
 </ul>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
+<footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="11" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="11" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
 <h1>Keyboard Events</h1>
 <ul>
-<li><code>keydown</code>, <code>keyup</code>, and <code>keypress</code> events</li>
-<li><code>keydown</code> and <code>keypress</code> will repeat if held</li>
+<li><code>keydown</code> and <code>keyup</code> events</li>
+<li><code>keydown</code> will repeat if held</li>
 <li><code>event.key</code> holds a string with the value that the key would type</li>
-<li><code>shiftKey</code>, <code>ctrlKey</code>, <code>altKey</code>, and <code>metaKey</code> properties for modifier keys</li>
+<li>boolean properties for modifier keys:
+<ul>
+<li><code>event.shiftKey</code></li>
+<li><code>event.ctrlKey</code></li>
+<li><code>event.altKey</code></li>
+<li><code>event.metaKey</code> (Windows key or Mac Command key)</li>
 </ul>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
+</li>
+</ul>
+<footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="12" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="12" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
+<h1>Keyboard Events Continued …</h1>
 <ul>
 <li>event occurs on element that has focus (or document.body)</li>
 <li>if you want to capture all keystrokes, use <code>window.addEventListener()</code>
@@ -206,10 +215,11 @@ button.addEventListener(<span class="hljs-string">'click'</span>, once);
 <li><code>window.</code> is optional since it is the global object</li>
 </ul>
 </li>
+<li>Note: the <code>keypress</code> event is depricated</li>
 </ul>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
+<footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="13" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="13" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
 <h2>Key Event Properties</h2>
 <ul>
 <li>
@@ -219,48 +229,38 @@ button.addEventListener(<span class="hljs-string">'click'</span>, once);
 <p><code>event.code</code> (String) Holds a string that identifies the physical key being pressed. The value is not affected by the current keyboard layout or modifier state, so a particular key will always return the same value.</p>
 </li>
 </ul>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
+<footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="14" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
-<pre><code class="language-javascript"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-built_in">document</span>.body.addEventListener(<span class="hljs-string">'keydown'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Key pressed:'</span>, event.key);
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="14" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
+<h2>Key Event Properties Continued …</h2>
+<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>document.body.addEventListener('keydown', function(event) {
+  console.log('Key pressed:', event.key);
 });
 </span></span></foreignObject></svg></code></pre>
 <ul>
-<li><code>event.repeat</code> (Boolean) true if the key is being held down such that it is automatically repeating
+<li><code>event.repeat</code> (Boolean) <code>true</code> if the key is being held down such that it is automatically repeating
 <ul>
 <li>can be used to avoid repeatedly running the event handler</li>
 </ul>
 </li>
 </ul>
-<pre><code class="language-javascript"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-built_in">document</span>.body.addEventListener(<span class="hljs-string">'keydown'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">event</span>) </span>{
-  <span class="hljs-keyword">if</span> (event.repeat) <span class="hljs-keyword">return</span>;
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Key pressed:'</span>, event.key);
+<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>document.body.addEventListener('keydown', function(event) {
+  if (event.repeat) { return; }
+  console.log('Key pressed:', event.key);
 });
 </span></span></foreignObject></svg></code></pre>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
+<footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="15" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
-<h2>Key Event Order</h2>
-<ol>
-<li>When the key is first depressed, the <code>keydown</code> event is sent.</li>
-<li>If the key is not a modifier key, the <code>keypress</code> event is sent.</li>
-<li>When the user releases the key, the <code>keyup</code> event is sent.</li>
-</ol>
-<ul>
-<li>Note: Shift and other modifier keys do not activate <code>keypress</code></li>
-</ul>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="16" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="15" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
 <h1>Mouse Clicks</h1>
 <ul>
 <li><code>mousedown</code>, <code>mouseup</code>, <code>click</code>, and <code>dblclick</code> events</li>
-<li><code>pageX</code> and <code>pageY</code> properties give exact location</li>
+<li><code>event.pageX</code> and <code>event.pageY</code> properties give exact location</li>
 </ul>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
+<footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="17" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="16" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
+<h2>Mouse Clicks Continued …</h2>
 <ul>
 <li><code>event.button</code> takes into account user customization
 <ul>
@@ -272,9 +272,9 @@ button.addEventListener(<span class="hljs-string">'click'</span>, once);
 </ul>
 </li>
 </ul>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
+<footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="18" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="17" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
 <h2>Mouse Button Event Order</h2>
 <ol>
 <li><code>mousedown</code></li>
@@ -286,17 +286,17 @@ button.addEventListener(<span class="hljs-string">'click'</span>, once);
 </ul>
 </li>
 </ol>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
+<footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="19" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
-<h1>Mouse Motion</h1>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="18" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
+<h2>Mouse Motion</h2>
 <ul>
-<li><code>mousemove</code> event</li>
+<li><code>mousemove</code> event every time the mouse moves</li>
 <li><code>mouseover</code> or <code>mouseout</code> event equivalent to CSS <code>:hover</code></li>
 </ul>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
+<footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="20" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="19" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
 <h1>Touch Events</h1>
 <ul>
 <li>there are specific events for touch interfaces
@@ -308,47 +308,52 @@ button.addEventListener(<span class="hljs-string">'click'</span>, once);
 </li>
 <li>touch interfaces also produce <code>click</code> events</li>
 </ul>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
+<footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="21" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="20" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
 <h1>Scroll Events</h1>
 <ul>
 <li><code>scroll</code> event when page scrolls</li>
 <li>fired every time the page is scrolled</li>
-<li><code>pageYOffset</code> and <code>pageXOffset</code> for scroll position</li>
+<li><code>window.scrollX</code> and <code>window.scrollY</code> for scroll position</li>
 </ul>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
+<footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="22" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="21" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
 <h1>Focus Events</h1>
 <ul>
 <li><code>focus</code> and <code>blur</code></li>
 <li>when an element is selected it has <code>focus</code></li>
 <li>when it looses focus a <code>blur</code> event is fired</li>
-<li>often used with forms</li>
+<li>most often used with forms</li>
+<li>does not propogate</li>
 </ul>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
+<footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="23" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="22" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
 <h1>Load Event</h1>
 <ul>
-<li><code>load</code> event fires when the window finishes loading</li>
+<li><code>load</code> event fires on the <code>window</code> object when the window finishes loading</li>
 <li>often used to schedule initialization actions that require the DOM</li>
 <li>element that load external files, such as images, also have a load event</li>
-<li><code>beforeunload</code> fires when navigating away from a page</li>
+<li><code>beforeunload</code> fires when navigating away from a page
+<ul>
+<li>most browsers will ignore this due to abuse</li>
 </ul>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
+</li>
+</ul>
+<footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="24" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="23" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
 <h1>Script Execution Timeline</h1>
 <ul>
 <li>no two scripts can run at the same time</li>
 <li>each script (or function) will wait for others to finish</li>
 <li>web workers provide a way to do something while other things run</li>
 </ul>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
+<footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="25" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="24" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
 <h1>Setting Timers</h1>
 <ul>
 <li><code>setTimeout</code> to run a function after an amount of time</li>
@@ -356,16 +361,35 @@ button.addEventListener(<span class="hljs-string">'click'</span>, once);
 <li><code>clearTimeout</code> can be used to cancel it</li>
 <li><code>setInterval</code> and <code>clearInterval</code> is similar but repeats every specified time interval</li>
 </ul>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
+<footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-footer="WEB230: Module 6: Chapter 15: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="26" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="25" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
+<h1>Setting Timers Continued …</h1>
+<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>const button = document.querySelector('button');
+const list = document.querySelector('ul');
+let interval;
+button.addEventListener('click', function(event){
+  if(interval) {
+    clearInterval(interval);
+  } else {
+    interval = setInterval(function(){
+      let item = document.createElement('li');
+      item.textContent = 'New item';
+      list.appendChild(item);
+    },1000);
+  }
+});
+</span></span></foreignObject></svg></code></pre>
+<footer>Module 6: Handling Events</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="26" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
 <h1>Summary</h1>
 <ul>
 <li>event handlers make it possible to detect and react to external events</li>
 <li>each event has a type - eg. 'click'</li>
 <li>events <em>propagate</em> to their parent elements
 <ul>
-<li><code>stopPropagation()</code></li>
+<li><code>event.stopPropagation()</code></li>
 </ul>
 </li>
 <li>some elements have default actions
@@ -375,9 +399,16 @@ button.addEventListener(<span class="hljs-string">'click'</span>, once);
 </li>
 <li>only one piece of JavaScript can run at once</li>
 </ul>
-<footer>WEB230: Module 6: Chapter 15: Handling Events</footer>
+<footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-class="lead" data-theme="gaia" class="lead" style="--class:lead;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="27" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
+<h1>Reference</h1>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Events">MDN Events</a></li>
+</ul>
+<footer>Module 6: Handling Events</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-class="lead" data-theme="gaia" class="lead" style="--class:lead;--theme:gaia;">
 <h1>☀</h1>
 </section>
 </foreignObject></svg></article><script>!function(){"use strict";const t=()=>"Apple Computer, Inc."===navigator.vendor?[e]:[];function e(t){Array.from(document.getElementsByTagName("svg"),e=>{if(e.hasAttribute("data-marpit-svg")){const{clientHeight:r,clientWidth:a}=e;e.style.transform||(e.style.transform="translateZ(0)");const i=t||e.currentScale||1,n=e.viewBox.baseVal.width/i,s=e.viewBox.baseVal.height/i,o=Math.min(r/s,a/n);Array.from(e.querySelectorAll(":scope > foreignObject"),t=>{const e=t.x.baseVal.value,i=t.y.baseVal.value;Array.from(t.querySelectorAll(":scope > section"),t=>{t.style.transformOrigin||(t.style.transformOrigin="0 0");const l=(a-o*n)/2-e,c=(r-o*s)/2-i;t.style.transform=`translate3d(${l}px,${c}px,0) scale(${o}) translate(${e}px,${i}px)`})})}})}const r="data-marp-fitting",a="data-marp-fitting-code",i="data-marp-fitting-math",n=(t,e,r)=>{if(t.getAttribute(e)!==r)return t.setAttribute(e,r),!0};!function(e=!0){const s=()=>{for(const e of t())e();Array.from(document.querySelectorAll(`svg[${r}="svg"]`),t=>{const e=t.firstChild,r=e.firstChild,{scrollWidth:s,scrollHeight:o}=r;let l,c=1;if(t.hasAttribute(a)&&(l=t.parentElement.parentElement),t.hasAttribute(i)&&(l=t.parentElement),l){const t=getComputedStyle(l),e=Math.ceil(l.clientWidth-parseFloat(t.paddingLeft)-parseFloat(t.paddingRight));e&&(c=e)}const m=Math.max(s,c),p=Math.max(o,1),g=`0 0 ${m} ${p}`;n(e,"width",`${m}`),n(e,"height",`${p}`),n(t,"preserveAspectRatio",getComputedStyle(t).getPropertyValue("--preserve-aspect-ratio")||"xMinYMin meet"),n(t,"viewBox",g)&&t.classList.toggle("__reflow__")}),e&&window.requestAnimationFrame(s)};s()}()}();

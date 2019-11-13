@@ -1,11 +1,12 @@
 ---
 marp: true
 theme: gaia
-footer: 'WEB230: Module 6: Chapter 15: Handling Events'
+footer: 'Module 6: Handling Events'
 paginate: true
 Author: Phil Aylesworth
 Date: 2018-04-02
 Updated for 3rd edition: 2018-11-07
+Updated for corrections and more code examples: 2019-11-13
 ---
 
 <!--
@@ -38,16 +39,18 @@ _footer: ""
 # Events and DOM Nodes
 
 - Every DOM Element node can have events associated with it
-- use `addEventListener()`
+- use `.addEventListener()`
 - first argument is the event name such as `click`
 - second argument is a callback function (event handler)
 
 ---
 
-```javascript
+# Events and DOM Nodes Continued …
+
+```text
 const button = document.querySelector('button');
 button.addEventListener('click', function() {
-  console.log('Button clicked.');
+  alert('Button clicked.');
 });
 ```
 
@@ -58,10 +61,10 @@ button.addEventListener('click', function() {
 - Use a named callback function
 - This gives us a reference to the function that we can pass to `removeEventListener()`
 
-```javascript
+```text
 const button = document.querySelector('button');
 function once() {
-  console.log('Done.');
+  alert('Done.');
   button.removeEventListener('click', once);
 }
 button.addEventListener('click', once);
@@ -75,7 +78,7 @@ button.addEventListener('click', once);
 - this object has information about the event
   - for example, which element was clicked on
 - properties and methods vary depending on the type of event
-- more later
+- this parameter is usually called `event` or simply `e`
 
 ---
 
@@ -83,13 +86,13 @@ button.addEventListener('click', once);
 
 - if an event occurs on a child element it will trigger the event handler on the parent element
 - if both have handlers the more specific one runs first
-- `stopPropogation()` method on the event object can stop this
+- `event.stopPropogation()` method on the event object can stop this
 
 ---
 
 ## `target` Property
 
-- most events have a `target` property
+- most events have an `event.target` property
 - this is the element that the event occurred on
 - often used to delegate event handling to parent element
 
@@ -100,22 +103,29 @@ button.addEventListener('click', once);
 - some element have default actions
   - such as a form being submitted to a server or a link being followed
 - the event handler runs before the default action
-- `preventDefault()` method can stop the default action
+- `event.preventDefault()` method can stop the default action
 
 ---
 
 # Keyboard Events
 
-- `keydown`, `keyup`, and `keypress` events
-- `keydown` and `keypress` will repeat if held
+- `keydown` and `keyup` events
+- `keydown` will repeat if held
 - `event.key` holds a string with the value that the key would type
-- `shiftKey`, `ctrlKey`, `altKey`, and `metaKey` properties for modifier keys
+- boolean properties for modifier keys:
+  - `event.shiftKey`
+  - `event.ctrlKey`
+  - `event.altKey`
+  - `event.metaKey` (Windows key or Mac Command key)
 
 ---
+
+# Keyboard Events Continued …
 
 - event occurs on element that has focus (or document.body)
 - if you want to capture all keystrokes, use `window.addEventListener()`
   - `window.` is optional since it is the global object
+- Note: the `keypress` event is depricated
 
 ---
 
@@ -127,40 +137,34 @@ button.addEventListener('click', once);
 
 ---
 
-```javascript
+## Key Event Properties Continued …
+
+```text
 document.body.addEventListener('keydown', function(event) {
   console.log('Key pressed:', event.key);
 });
 ```
 
-- `event.repeat` (Boolean) true if the key is being held down such that it is automatically repeating
+- `event.repeat` (Boolean) `true` if the key is being held down such that it is automatically repeating
   - can be used to avoid repeatedly running the event handler
 
-```javascript
+```text
 document.body.addEventListener('keydown', function(event) {
-  if (event.repeat) return;
+  if (event.repeat) { return; }
   console.log('Key pressed:', event.key);
 });
 ```
-
----
-
-## Key Event Order
-
-1. When the key is first depressed, the `keydown` event is sent.
-2. If the key is not a modifier key, the `keypress` event is sent.
-3. When the user releases the key, the `keyup` event is sent.
-
-- Note: Shift and other modifier keys do not activate `keypress`
 
 ---
 
 # Mouse Clicks
 
 - `mousedown`, `mouseup`, `click`, and `dblclick` events
-- `pageX` and `pageY` properties give exact location
+- `event.pageX` and `event.pageY` properties give exact location
 
 ---
+
+## Mouse Clicks Continued …
 
 - `event.button` takes into account user customization
   - 0: Main button pressed, usually the left button or the un-initialized state
@@ -181,9 +185,9 @@ document.body.addEventListener('keydown', function(event) {
 
 ---
 
-# Mouse Motion
+## Mouse Motion
 
-- `mousemove` event
+- `mousemove` event every time the mouse moves
 - `mouseover` or `mouseout` event equivalent to CSS `:hover`
 
 ---
@@ -202,7 +206,7 @@ document.body.addEventListener('keydown', function(event) {
 
 - `scroll` event when page scrolls
 - fired every time the page is scrolled
-- `pageYOffset` and `pageXOffset` for scroll position
+- `window.scrollX` and `window.scrollY` for scroll position
 
 ---
 
@@ -211,16 +215,18 @@ document.body.addEventListener('keydown', function(event) {
 - `focus` and `blur`
 - when an element is selected it has `focus`
 - when it looses focus a `blur` event is fired
-- often used with forms
+- most often used with forms
+- does not propogate
 
 ---
 
 # Load Event
 
-- `load` event fires when the window finishes loading
+- `load` event fires on the `window` object when the window finishes loading
 - often used to schedule initialization actions that require the DOM
 - element that load external files, such as images, also have a load event
 - `beforeunload` fires when navigating away from a page
+  - most browsers will ignore this due to abuse
 
 ---
 
@@ -241,15 +247,42 @@ document.body.addEventListener('keydown', function(event) {
 
 ---
 
+# Setting Timers Continued …
+
+```text
+const button = document.querySelector('button');
+const list = document.querySelector('ul');
+let interval;
+button.addEventListener('click', function(event){
+  if(interval) {
+    clearInterval(interval);
+  } else {
+    interval = setInterval(function(){
+      let item = document.createElement('li');
+      item.textContent = 'New item';
+      list.appendChild(item);
+    },1000);
+  }
+});
+```
+
+---
+
 # Summary
 
 - event handlers make it possible to detect and react to external events
 - each event has a type - eg. 'click'
 - events _propagate_ to their parent elements
-  - `stopPropagation()`
+  - `event.stopPropagation()`
 - some elements have default actions
   - `event.preventDefault()`
 - only one piece of JavaScript can run at once
+
+---
+
+# Reference
+
+- [MDN Events](https://developer.mozilla.org/en-US/docs/Web/Events)
 
 ---
 
