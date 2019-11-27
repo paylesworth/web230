@@ -22,7 +22,7 @@ _footer: ""
 
 # Encapsulation
 
-- Object Oriented programming was developed in the 1970's and '80's
+- Object Oriented programming was developed in the 1970s and ’80s
 - the idea is to divide programs into smaller pieces
 - each piece is responsible for managing its own state
 
@@ -35,10 +35,10 @@ _footer: ""
 ```text
 let rabbit = {};
 rabbit.speak = function(line) {
-  console.log("The rabbit says '" + line + "'");
+  console.log(`The rabbit says "${line}"`);
 };
 
-rabbit.speak("I'm alive.");
+rabbit.speak('Hello');
 ```
 
 ---
@@ -50,11 +50,13 @@ rabbit.speak("I'm alive.");
 
 ```text
 function speak(line) {
-  console.log(`The ${this.type} rabbit says '${line}'`);
+  console.log(`The ${this.type} rabbit says "${line}"`);
 }
-let whiteRabbit = {type: "white", speak: speak};
-
-whiteRabbit.speak("Oh, how late it's getting!");
+let whiteRabbit = {
+  type: 'white',
+  speak: speak
+};
+whiteRabbit.speak('Oh, how late it is!');
 ```
 
 ---
@@ -66,11 +68,11 @@ whiteRabbit.speak("Oh, how late it's getting!");
 
 ```text
 const speak = line => {
-  console.log(`The ${this.type} rabbit says '${line}'`);
+  console.log(`The ${this.type} rabbit says "${line}"`);
 }
-let whiteRabbit = {type: "white", speak: speak};
+let whiteRabbit = {type: 'white', speak: speak};
 
-whiteRabbit.speak("Oh, how late it's getting!");
+whiteRabbit.speak('Oh, how late it is!');
 ```
 
 - **dosen't work** - `this.type == undefined`
@@ -106,9 +108,8 @@ console.log(empty.toString());
 - Other prototypes can be layered on top
 
 ```text
-console.log(Object.getPrototypeOf([]) == Array.prototype);
-console.log(Object.getPrototypeOf(Array.prototype)
-                == Object.prototype);
+console.log(Object.getPrototypeOf([]) === Array.prototype);
+console.log(Object.getPrototypeOf(Array.prototype) === Object.prototype);
 ```
 
 ---
@@ -146,8 +147,8 @@ function Rabbit(type) {
   this.type = type;
 }
 
-let killerRabbit = new Rabbit("killer");
-let blackRabbit = new Rabbit("black");
+let killerRabbit = new Rabbit('killer');
+let blackRabbit = new Rabbit('black');
 console.log(blackRabbit.type);
 ```
 
@@ -156,15 +157,14 @@ console.log(blackRabbit.type);
 ## Constructors Continued …
 
 - the constructor has a property named `prototype`
-  - holds a empty object that derives from Object.prototype
+  - holds a empty object that derives from `Object.prototype`
   - every instance created with this constructor will have this object as its prototype
 
 ```text
 Rabbit.prototype.speak = function(line) {
-  console.log("The " + this.type + " rabbit says '" +
-              line + "'");
+  console.log(`The ${this.type} rabbit says "${line}"`);
 };
-blackRabbit.speak("Doom...");
+blackRabbit.speak('Doom...');
 ```
 
 ---
@@ -196,12 +196,12 @@ class Rabbit {
     this.type = type;
   }
   speak(line) {
-    console.log(`The ${this.type} rabbit says '${line}'`);
+    console.log(`The ${this.type} rabbit says "${line}"`);
   }
 }
 
-let killerRabbit = new Rabbit("killer");
-let blackRabbit = new Rabbit("black");
+let killerRabbit = new Rabbit('killer');
+let blackRabbit = new Rabbit('black');
 ```
 
 ---
@@ -211,26 +211,14 @@ let blackRabbit = new Rabbit("black");
 - If the object does not have a property it will look to the prototype
 
 ```text
-Rabbit.prototype.teeth = "small";
+Rabbit.prototype.teeth = 'small';
+
 console.log(killerRabbit.teeth);
-killerRabbit.teeth = "long, sharp, and bloody";
+
+killerRabbit.teeth = 'long, sharp, and bloody';
+
 console.log(killerRabbit.teeth);
 console.log(blackRabbit.teeth);
-console.log(Rabbit.prototype.teeth);
-```
-
----
-
-## Prototype Interference
-
-- A prototype can be used at any time to add new properties and methods to all objects based on it
-
-```text
-Rabbit.prototype.dance = function() {
-  console.log("The " + this.type + " rabbit dances a jig.");
-};
-
-killerRabbit.dance();
 ```
 
 ---
@@ -245,11 +233,10 @@ let lunch = {
   pizza: 200,
   donut: 350
 }
-Object.prototype.nonsense = "hi";
+Object.prototype.nonsense = 'hi';
 
 console.log(`pizza: ${'pizza' in lunch}`);
 console.log(`nonsense: ${'nonsense' in lunch}`);
-
 ```
 
 ---
@@ -264,7 +251,7 @@ let lunch = {
   pizza: 200,
   donut: 350
 }
-Object.prototype.nonsense = "hi";
+Object.prototype.nonsense = 'hi';
 
 console.log(`pizza: ${lunch.hasOwnProperty('pizza')}`);
 console.log(`nonsense: ${lunch.hasOwnProperty('nonsense')}`);
@@ -281,7 +268,7 @@ let lunch = {
   pizza: 200,
   donut: 350
 }
-Object.prototype.nonsense = "hi";
+Object.prototype.nonsense = 'hi';
 
 for( let food in lunch ) {
   console.log(food);
@@ -295,15 +282,15 @@ for( let food in lunch ) {
 - polymorphism is when a method or an operator does different things on different data types
 - JavaScript methods can be polymorphic
 - Eg. all values have a method `.toString()`
-  - `toString()` is used to convert values to strings
+  - `.toString()` is used to convert values to strings
 - We can write our own `.toString()`, to work with our object
 
 ---
 
 # Polymorphism Continued …
 
-```javascript
-llet lunch = {};
+```text
+let lunch = {};
 
 console.log('I brought ' + lunch);
 
@@ -318,14 +305,14 @@ console.log('I brought ' + lunch);
 
 # Getters and Setters
 
-- Sometimes we need to control setting or getting values of a property
+- Often need to control setting or getting values of a property
 - This created the style of writing getter and setter methods
 
 ---
 
 ## Getters and Setters Continued …
 
-```javascript
+```text
 class Temperature {
   constructor(celsius) {
     this.celsius = celsius;
@@ -339,7 +326,7 @@ class Temperature {
 }
 
 let temp = new Temperature(22);
-console.log(temp.fahrenheit);
+console.log(temp.getFahrenheit());
 ```
 
 ---
@@ -353,7 +340,7 @@ console.log(temp.fahrenheit);
 
 ## Getters and Setters Continued …
 
-```javascript
+```text
 class Temperature {
   constructor(celsius) {
     this.celsius = celsius;
