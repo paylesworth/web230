@@ -180,11 +180,12 @@ blackRabbit.speak('Doom...');
 ## Class Notation Continued …
 
 - the `class` keyword starts the declaration
-- `constructor()` is the constructor function
+- `constructor()` (optional) is the constructor function
 - methods can be declared _after_ the constructor
   - don't use the `function` keyword
   - these methods are put in the prototype
   - can't declare properties inside a `class`
+- the `class` block is run in strict mode
 
 ---
 
@@ -209,6 +210,8 @@ let blackRabbit = new Rabbit('black');
 ## Overriding Derived Properties
 
 - If the object does not have a property it will look to the prototype
+- If we add a property (or method) earlier in the prototype chain, it will be used
+- also know as "Prototype Interference"
 
 ```text
 Rabbit.prototype.teeth = 'small';
@@ -225,36 +228,29 @@ console.log(blackRabbit.teeth);
 
 ## `in` Operator
 
-- `in` operator tells us if an object has a property
-- `.hasOwnProperty()` tells us if it has the property, not the prototype
+- tells us if an object has access to a property
+- `in` evaluates to `true` if the property is present
 
 ```text
-let lunch = {
-  pizza: 200,
-  donut: 350
-}
-Object.prototype.nonsense = 'hi';
-
-console.log(`pizza: ${'pizza' in lunch}`);
-console.log(`nonsense: ${'nonsense' in lunch}`);
+console.log('teeth' in blackRabbit);
+// true
+console.log('teeth' in killerRabbit);
+// true
 ```
 
 ---
 
 ## `.hasOwnProperty()` Method
 
-- We can check if a property belongs to the object but **not** on it's prototype
+- check if a property belongs to the object but **not** on it's prototype
 - `.hasOwnProperty()` returns `true` if the property is on the object
 
 ```text
-let lunch = {
-  pizza: 200,
-  donut: 350
-}
-Object.prototype.nonsense = 'hi';
+console.log(blackRabbit.hasOwnProperty('teeth'));
+// true
+console.log(killerRabbit.hasOwnProperty('teeth'));
+// false
 
-console.log(`pizza: ${lunch.hasOwnProperty('pizza')}`);
-console.log(`nonsense: ${lunch.hasOwnProperty('nonsense')}`);
 ```
 
 ---
@@ -264,14 +260,8 @@ console.log(`nonsense: ${lunch.hasOwnProperty('nonsense')}`);
 - `for…in` will loop through properties of an object
 
 ```text
-let lunch = {
-  pizza: 200,
-  donut: 350
-}
-Object.prototype.nonsense = 'hi';
-
-for( let food in lunch ) {
-  console.log(food);
+for( let prop in blackRabbit ) {
+  console.log(prop, blackRabbit[prop]);
 }
 ```
 
@@ -290,15 +280,12 @@ for( let food in lunch ) {
 # Polymorphism Continued …
 
 ```text
-let lunch = {};
-
-console.log('I brought ' + lunch);
-
-lunch.toString = function() {
-  return 'My lunch.';
-};
-
-console.log('I brought ' + lunch);
+class Rabbit {
+  ...
+  toString() {
+    return this.type + ' rabbit';
+  }
+}
 ```
 
 ---

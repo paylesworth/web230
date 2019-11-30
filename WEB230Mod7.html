@@ -266,7 +266,7 @@ blackRabbit.speak('Doom...');
 <h2>Class Notation Continued …</h2>
 <ul>
 <li>the <code>class</code> keyword starts the declaration</li>
-<li><code>constructor()</code> is the constructor function</li>
+<li><code>constructor()</code> (optional) is the constructor function</li>
 <li>methods can be declared <em>after</em> the constructor
 <ul>
 <li>don't use the <code>function</code> keyword</li>
@@ -274,6 +274,7 @@ blackRabbit.speak('Doom...');
 <li>can't declare properties inside a <code>class</code></li>
 </ul>
 </li>
+<li>the <code>class</code> block is run in strict mode</li>
 </ul>
 <footer>Module 7: The Secret Life of Objects</footer>
 </section>
@@ -297,6 +298,8 @@ let blackRabbit = new Rabbit('black');
 <h2>Overriding Derived Properties</h2>
 <ul>
 <li>If the object does not have a property it will look to the prototype</li>
+<li>If we add a property (or method) earlier in the prototype chain, it will be used</li>
+<li>also know as &quot;Prototype Interference&quot;</li>
 </ul>
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>Rabbit.prototype.teeth = 'small';
 
@@ -312,34 +315,27 @@ console.log(blackRabbit.teeth);
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="17" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h2><code>in</code> Operator</h2>
 <ul>
-<li><code>in</code> operator tells us if an object has a property</li>
-<li><code>.hasOwnProperty()</code> tells us if it has the property, not the prototype</li>
+<li>tells us if an object has access to a property</li>
+<li><code>in</code> evaluates to <code>true</code> if the property is present</li>
 </ul>
-<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>let lunch = {
-  pizza: 200,
-  donut: 350
-}
-Object.prototype.nonsense = 'hi';
-
-console.log(`pizza: ${'pizza' in lunch}`);
-console.log(`nonsense: ${'nonsense' in lunch}`);
+<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>console.log('teeth' in blackRabbit);
+// true
+console.log('teeth' in killerRabbit);
+// true
 </span></span></foreignObject></svg></code></pre>
 <footer>Module 7: The Secret Life of Objects</footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="18" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h2><code>.hasOwnProperty()</code> Method</h2>
 <ul>
-<li>We can check if a property belongs to the object but <strong>not</strong> on it's prototype</li>
+<li>check if a property belongs to the object but <strong>not</strong> on it's prototype</li>
 <li><code>.hasOwnProperty()</code> returns <code>true</code> if the property is on the object</li>
 </ul>
-<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>let lunch = {
-  pizza: 200,
-  donut: 350
-}
-Object.prototype.nonsense = 'hi';
+<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>console.log(blackRabbit.hasOwnProperty('teeth'));
+// true
+console.log(killerRabbit.hasOwnProperty('teeth'));
+// false
 
-console.log(`pizza: ${lunch.hasOwnProperty('pizza')}`);
-console.log(`nonsense: ${lunch.hasOwnProperty('nonsense')}`);
 </span></span></foreignObject></svg></code></pre>
 <footer>Module 7: The Secret Life of Objects</footer>
 </section>
@@ -348,14 +344,8 @@ console.log(`nonsense: ${lunch.hasOwnProperty('nonsense')}`);
 <ul>
 <li><code>for…in</code> will loop through properties of an object</li>
 </ul>
-<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>let lunch = {
-  pizza: 200,
-  donut: 350
-}
-Object.prototype.nonsense = 'hi';
-
-for( let food in lunch ) {
-  console.log(food);
+<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>for( let prop in blackRabbit ) {
+  console.log(prop, blackRabbit[prop]);
 }
 </span></span></foreignObject></svg></code></pre>
 <footer>Module 7: The Secret Life of Objects</footer>
@@ -376,15 +366,12 @@ for( let food in lunch ) {
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="21" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h1>Polymorphism Continued …</h1>
-<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>let lunch = {};
-
-console.log('I brought ' + lunch);
-
-lunch.toString = function() {
-  return 'My lunch.';
-};
-
-console.log('I brought ' + lunch);
+<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>class Rabbit {
+  ...
+  toString() {
+    return this.type + ' rabbit';
+  }
+}
 </span></span></foreignObject></svg></code></pre>
 <footer>Module 7: The Secret Life of Objects</footer>
 </section>
