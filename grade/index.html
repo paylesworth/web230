@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="style.css" rel="stylesheet" />
+  <script src="script.js" defer></script>
+  <title>Grade Calculator</title>
+</head>
+
+<body>
+  <!-- Warning message for IE  -->
+  <!-- [if IE]>
+  <div style="text-align: center; width: 100%; color: white; background-color: red">This website may not be compatible with Internet Explorer. Please use a modern browser.</div>
+  <![endif]-->
+
+  <h1> Calculate Grade</h1>
+
+  <p>Enter your marks, comma seperated:</p>
+  <form action="#">
+    <label for="assignments">Assignments: </label>
+    <input name="assignments" id="assignments" placeholder="0,0,0,0,0,0,0,0,0" maxlength="50"
+      pattern="(10|\d)(,10|,\d){0,9}" autofocus />
+
+    <label for="quizzes">Quizzes: </label>
+    <input name="quizzes" id="quizzes" placeholder="0,0,0,0,0,0,0" maxlength="30" pattern="(10|\d)(,10|,\d){0,6}" />
+
+    <label for="tests">Tests: </label>
+    <input name="tests" id="tests" placeholder="0,0" maxlength="30"
+      pattern="(100|\d\d?(\.\d*)?)(,100|,\d\d?(\.\d*)?)?" />
+
+    <label for="grade">Grade: </label>
+    <input name="grade" id="grade" value="0" disabled />
+  </form>
+
+  <article>
+    <p>Final grade is caluclated as follows:</p>
+    <ul>
+      <li>20% Assignments (10 assignments, each out of 10)</li>
+      <li>10% Quizzes (7 quizzes, each out of 10)</li>
+      <li>70% Tests (2 tests, each out of 100)</li>
+    </ul>
+    <p>You can calculate the following type of grades:</p>
+    <ul>
+      <li><strong>Running Total</strong> - Enter only the grades you have earned. This will be your grade so far in the
+        course.</li>
+      <li><strong>Final Grade</strong> - Enter zero for any marks you have not earned yet. This will show the percent of
+        the final grade that you have earned so far.</li>
+      <li><strong>What-If</strong> - Enter the grades you have earned and then try different values for the up coming
+        grades to see what grades you need to acchive.</li>
+    </ul>
+  </article>
+
+</body>
+
+</html>
