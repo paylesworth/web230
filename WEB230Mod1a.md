@@ -209,6 +209,7 @@ half of 100 is 50
 - `>=` Greater than or equal
 - `<=` Less than or equal
 - `==` Equal
+- `!=` Not Equal
 
 ---
 
