@@ -109,7 +109,7 @@ mack.push("the", "Knife");
 console.log(mack);
 // → ["Mack", "the", "Knife"]
 
-console.log(mack.join(" "))
+console.log(mack.join(" "));
 // Mack the Knife
 
 console.log(mack.pop());
@@ -233,6 +233,8 @@ for(let i in myPets) {
 }
 ```
 
+Note: the `for...in` loop does not guarrente that the array will be processed in order.
+
 ---
 
 ## Array Loops Continued …
@@ -243,6 +245,24 @@ And the `for...of` loop:
 const myPets = ['dog', 'cat', 'rat', 'snake'];
 for(let pet of myPets) {
   console.log(pet);
+}
+```
+
+---
+
+## Looping on Objects
+
+The `for...in` loop was designed for objects.
+
+```text
+let car = {
+  make: "Ford",
+  model: "Mustang",
+  year: 1967
+}
+
+for(let prop in car){
+  console.log(prop, car[prop]);
 }
 ```
 
