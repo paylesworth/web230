@@ -66,7 +66,7 @@ console.log(listOfNumbers[2 - 1]); //  3
 ## Properties Continued …
 
 ```text
-let myName = 'Phil';
+let myName = 'Billy Eilish';
 let propName = 'length';
 console.log(myName.length);
 console.log(myName['length']);
@@ -182,8 +182,8 @@ let object1 = {value: 10};
 let object2 = object1;
 let object3 = {value: 10};
 
-console.log(object1 == object2);//  true
-console.log(object1 == object3);//  false
+console.log(object1 === object2);//  true
+console.log(object1 === object3);//  false
 
 object1.value = 15;
 console.log(object2.value);//  15
@@ -203,8 +203,8 @@ console.log(object3.value);//  10
 
 ## Mutability Continued …
 
-- When comparing objects, JavaScript’s `==` operator
-  - Will return true only if both objects are precisely the same value
+- When comparing objects, JavaScript’s `===` (or `==`) operator
+  - Will return true only if both objects are **the same** object
   - Comparing different objects will return false, even if they have identical contents
 
 ---
