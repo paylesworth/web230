@@ -309,7 +309,7 @@ for(let i=0; i&lt;myPets.length; i++) {
 <footer>WEB230: Chapter 4: Data Structures: Objects and Arrays</footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-footer="WEB230: Chapter 4: Data Structures: Objects and Arrays" data-paginate="true" data-theme="gaia" data-marpit-pagination="18" data-marpit-pagination-total="38" style="--paginate:true;--theme:gaia;">
-<h2>Array Loops Continued …</h2>
+<h2><code>for...in</code> Loop</h2>
 <p>This is such a common task that some special loops were created, like the <code>for...in</code> loop:</p>
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>const myPets = ['dog', 'cat', 'rat', 'snake'];
 for(let i in myPets) {
@@ -320,17 +320,7 @@ for(let i in myPets) {
 <footer>WEB230: Chapter 4: Data Structures: Objects and Arrays</footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-footer="WEB230: Chapter 4: Data Structures: Objects and Arrays" data-paginate="true" data-theme="gaia" data-marpit-pagination="19" data-marpit-pagination-total="38" style="--paginate:true;--theme:gaia;">
-<h2>Array Loops Continued …</h2>
-<p>And the <code>for...of</code> loop:</p>
-<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>const myPets = ['dog', 'cat', 'rat', 'snake'];
-for(let pet of myPets) {
-  console.log(pet);
-}
-</span></span></foreignObject></svg></code></pre>
-<footer>WEB230: Chapter 4: Data Structures: Objects and Arrays</footer>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-footer="WEB230: Chapter 4: Data Structures: Objects and Arrays" data-paginate="true" data-theme="gaia" data-marpit-pagination="20" data-marpit-pagination-total="38" style="--paginate:true;--theme:gaia;">
-<h2>Looping on Objects</h2>
+<h2><code>for...in</code> Loop on Objects</h2>
 <p>The <code>for...in</code> loop was designed for objects.</p>
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>let car = {
   make: &quot;Ford&quot;,
@@ -342,6 +332,17 @@ for(let prop in car){
   console.log(prop, car[prop]);
 }
 </span></span></foreignObject></svg></code></pre>
+<footer>WEB230: Chapter 4: Data Structures: Objects and Arrays</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-footer="WEB230: Chapter 4: Data Structures: Objects and Arrays" data-paginate="true" data-theme="gaia" data-marpit-pagination="20" data-marpit-pagination-total="38" style="--paginate:true;--theme:gaia;">
+<h2><code>for...of</code> Loop</h2>
+<p>The <code>for...of</code> loop was designed specifically for arrays:</p>
+<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>const myPets = ['dog', 'cat', 'rat', 'snake'];
+for(let pet of myPets) {
+  console.log(pet);
+}
+</span></span></foreignObject></svg></code></pre>
+<p>Note: The <code>for...of</code> loop will access array elements in order.</p>
 <footer>WEB230: Chapter 4: Data Structures: Objects and Arrays</footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-footer="WEB230: Chapter 4: Data Structures: Objects and Arrays" data-paginate="true" data-theme="gaia" data-marpit-pagination="21" data-marpit-pagination-total="38" style="--paginate:true;--theme:gaia;">
@@ -383,17 +384,16 @@ list.indexOf(3,3);  // 4
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-footer="WEB230: Chapter 4: Data Structures: Objects and Arrays" data-paginate="true" data-theme="gaia" data-marpit-pagination="23" data-marpit-pagination-total="38" style="--paginate:true;--theme:gaia;">
 <h2>Arrays Continued …</h2>
 <ul>
-<li><code>slice</code> takes a start and end index and returns an array that has only the elements between</li>
-<li>When the end index is not given, slice will take go to the end of the array</li>
+<li><code>.slice()</code> will create a new array with a segment of the array copied</li>
+<li>takes a start and end index</li>
+<li>When the end index is not given, it will go to the end of the array</li>
+<li>Negative arguments will count from the end of the array</li>
 </ul>
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>let list = [1,2,3,4,3,2,1];
 list.slice(2, 4);  // → [3, 4]
 
 list.slice(4);  // → [3, 2, 1]
 </span></span></foreignObject></svg></code></pre>
-<ul>
-<li>Strings also have a <code>slice</code> method, which has a similar effect</li>
-</ul>
 <footer>WEB230: Chapter 4: Data Structures: Objects and Arrays</footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-footer="WEB230: Chapter 4: Data Structures: Objects and Arrays" data-paginate="true" data-theme="gaia" data-marpit-pagination="24" data-marpit-pagination-total="38" style="--paginate:true;--theme:gaia;">
@@ -444,7 +444,7 @@ nut.indexOf(&quot;u&quot;);  // → 5
 </ul>
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>let nut = &quot;  \t coconuts \t \n    &quot;;
 nut.trim();
-// → coconut
+// → &quot;coconuts&quot;
 </span></span></foreignObject></svg></code></pre>
 <footer>WEB230: Chapter 4: Data Structures: Objects and Arrays</footer>
 </section>
@@ -472,7 +472,9 @@ string[1];  // → b
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>function max(...numbers) {
   let result = -Infinity;
   for (let number of numbers) {
-    if (number &gt; result) result = number;
+    if (number &gt; result) {
+      result = number;
+    }
   }
   return result;
 }
@@ -492,11 +494,15 @@ console.log(max(4, 1, 9, -2));
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-footer="WEB230: Chapter 4: Data Structures: Objects and Arrays" data-paginate="true" data-theme="gaia" data-marpit-pagination="30" data-marpit-pagination-total="38" style="--paginate:true;--theme:gaia;">
 <h2>Spread Operator</h2>
 <ul>
-<li>Similarly, we can spread the values of an array into individual values</li>
+<li>Similarly, we can spread the values of an array into individual values, in an array:</li>
 </ul>
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>let words = [&quot;never&quot;, &quot;fully&quot;];
 console.log([&quot;will&quot;, ...words, &quot;understand&quot;]);
 // → [&quot;will&quot;, &quot;never&quot;, &quot;fully&quot;, &quot;understand&quot;]
+</span></span></foreignObject></svg></code></pre>
+<p>Or in a function call:</p>
+<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>let nums = [4,56,7,6,54,43,4,6,7,7];
+let max = Math.max(...nums);
 </span></span></foreignObject></svg></code></pre>
 <footer>WEB230: Chapter 4: Data Structures: Objects and Arrays</footer>
 </section>

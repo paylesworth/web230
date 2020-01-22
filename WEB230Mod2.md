@@ -222,7 +222,7 @@ for(let i=0; i<myPets.length; i++) {
 
 ---
 
-## Array Loops Continued …
+## `for...in` Loop
 
 This is such a common task that some special loops were created, like the `for...in` loop:
 
@@ -237,20 +237,7 @@ Note: the `for...in` loop does not guarrente that the array will be processed in
 
 ---
 
-## Array Loops Continued …
-
-And the `for...of` loop:
-
-```text
-const myPets = ['dog', 'cat', 'rat', 'snake'];
-for(let pet of myPets) {
-  console.log(pet);
-}
-```
-
----
-
-## Looping on Objects
+## `for...in` Loop on Objects
 
 The `for...in` loop was designed for objects.
 
@@ -265,6 +252,21 @@ for(let prop in car){
   console.log(prop, car[prop]);
 }
 ```
+
+---
+
+## `for...of` Loop
+
+The `for...of` loop was designed specifically for arrays:
+
+```text
+const myPets = ['dog', 'cat', 'rat', 'snake'];
+for(let pet of myPets) {
+  console.log(pet);
+}
+```
+
+Note: The `for...of` loop will access array elements in order.
 
 ---
 
@@ -308,8 +310,10 @@ list.indexOf(3,3);  // 4
 
 ## Arrays Continued …
 
-- `slice` takes a start and end index and returns an array that has only the elements between
-- When the end index is not given, slice will take go to the end of the array
+- `.slice()` will create a new array with a segment of the array copied
+- takes a start and end index
+- When the end index is not given, it will go to the end of the array
+- Negative arguments will count from the end of the array
 
 ```text
 let list = [1,2,3,4,3,2,1];
@@ -317,8 +321,6 @@ list.slice(2, 4);  // → [3, 4]
 
 list.slice(4);  // → [3, 2, 1]
 ```
-
-- Strings also have a `slice` method, which has a similar effect
 
 ---
 
@@ -363,7 +365,7 @@ nut.indexOf("u");  // → 5
 ```text
 let nut = "  \t coconuts \t \n    ";
 nut.trim();
-// → coconut
+// → "coconuts"
 ```
 
 ---
@@ -393,7 +395,9 @@ string[1];  // → b
 function max(...numbers) {
   let result = -Infinity;
   for (let number of numbers) {
-    if (number > result) result = number;
+    if (number > result) {
+      result = number;
+    }
   }
   return result;
 }
@@ -412,12 +416,19 @@ console.log(max(4, 1, 9, -2));
 
 ## Spread Operator
 
-- Similarly, we can spread the values of an array into individual values
+- Similarly, we can spread the values of an array into individual values, in an array:
 
 ```text
 let words = ["never", "fully"];
 console.log(["will", ...words, "understand"]);
 // → ["will", "never", "fully", "understand"]
+```
+
+Or in a function call:
+
+```text
+let nums = [4,56,7,6,54,43,4,6,7,7];
+let max = Math.max(...nums);
 ```
 
 ---
