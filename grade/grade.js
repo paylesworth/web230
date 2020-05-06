@@ -1,17 +1,17 @@
 'use strict';
 
 // Calculate the average of an array
-const average = function(array) {
+const average = function (array) {
   return (
     array
-      .map(n => +n)
-      .filter(n => !Number.isNaN(n))
+      .map((n) => +n)
+      .filter((n) => !Number.isNaN(n))
       .reduce((s, n) => s + n, 0) / array.length
   );
 };
 
 // Calculate the letter grade
-const letter = function(mark) {
+const letter = function (mark) {
   if (mark >= 80) return 'A';
   else if (mark >= 70) return 'B';
   else if (mark >= 60) return 'C';
@@ -27,31 +27,36 @@ const gField = document.querySelector('#grade');
 const form = document.querySelector('form');
 
 // calculate the grade
-const action = function(event) {
-  // get the contents of the fields
-  const assignments = aField.value;
-  const quizzes = qField.value;
-  const tests = tField.value;
+const action = function (event) {
+  // get the contents of the fields and clean them
+  const regex = /[, ]+/g;
+  const assignments = aField.value.replace(regex, ', ');
+  const quizzes = qField.value.replace(regex, ', ');
+  const tests = tField.value.replace(regex, ', ');
+  // put the clean values back
+  aField.value = assignments;
+  qField.value = quizzes;
+  tField.value = tests;
 
   // convert to arrays
-  const a = assignments.split(',');
-  const q = quizzes.split(',');
-  const t = tests.split(',');
+  const a = assignments.split(', ');
+  const q = quizzes.split(', ');
+  const t = tests.split(', ');
 
   const aAve = average(a);
   const qAve = average(q);
   const tAve = average(t);
 
-  const grade = aAve * 2 + qAve + tAve * 0.7;
+  const grade = aAve * 3 + qAve * 2 + tAve * 0.5;
 
   gField.value = `${grade.toFixed(1)}% (${letter(grade)})`;
   localStorage.grades = JSON.stringify({ a, q, t });
 };
 
 // ignore keys that are not valid
-const testKey = function(event) {
-  // okay if number, period, comma, or control key
-  if ('0123456789.,'.includes(event.key) || event.key.length > 1) {
+const testKey = function (event) {
+  // okay if number, period, comma, space, or control key
+  if ('0123456789., '.includes(event.key) || event.key.length > 1) {
     return;
   }
 

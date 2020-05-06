@@ -29,15 +29,15 @@
   <p>Enter your marks, comma separated:</p>
   <form action="#">
     <label for="assignments">Assignments: </label>
-    <input name="assignments" id="assignments" placeholder="0,0,0,0,0,0,0,0,0" maxlength="50"
-      pattern="(10|\d)(,10|,\d){0,9}" autofocus />
+    <input name="assignments" id="assignments" placeholder="0,0,0,0,0,0,0,0" maxlength="50"
+      pattern="(10|\d)(, 10|, \d){0,9}" autofocus />
 
     <label for="quizzes">Quizzes: </label>
-    <input name="quizzes" id="quizzes" placeholder="0,0,0,0,0,0,0" maxlength="30" pattern="(10|\d)(,10|,\d){0,6}" />
+    <input name="quizzes" id="quizzes" placeholder="0,0,0,0,0,0" maxlength="30" pattern="(10|\d)(, 10|, \d){0,6}" />
 
     <label for="tests">Tests: </label>
     <input name="tests" id="tests" placeholder="0,0" maxlength="30"
-      pattern="(100|\d\d?(\.\d*)?)(,100|,\d\d?(\.\d*)?)?" />
+      pattern="(100|\d\d?(\.\d*)?)(, 100|, \d\d?(\.\d*)?)?" />
 
     <label for="grade">Grade: </label>
     <input name="grade" id="grade" value="0" disabled />
@@ -46,9 +46,9 @@
   <article>
     <p>Final grade is calculated as follows:</p>
     <ul>
-      <li>20% Assignments (10 assignments, each out of 10)</li>
-      <li>10% Quizzes (7 quizzes, each out of 10)</li>
-      <li>70% Tests (2 tests, each out of 100)</li>
+      <li>30% Assignments (8 assignments, each out of 10)</li>
+      <li>20% Quizzes (6 quizzes, each out of 10)</li>
+      <li>50% Tests/Projects (2 tests or projects, each out of 100)</li>
     </ul>
     <p>You can calculate the following type of grades:</p>
     <ul>

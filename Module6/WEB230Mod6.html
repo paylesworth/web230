@@ -91,9 +91,9 @@ article#presentation > svg[data-marpit-svg] > foreignObject[data-marpit-advanced
   height: 100%;
 }</style></head><body><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button></div><article id="presentation"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-class="invert lead" data-theme="gaia" class="invert lead" style="--class:invert lead;--theme:gaia;">
 <h1>WEB230: JavaScript 1</h1>
-<h2>Module 6: Handling Events<br />Part A - Event Handler</h2>
+<h2>Module 6: Handling Events</h2>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="2" data-marpit-pagination-total="23" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="2" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
 <h1>Events</h1>
 <ul>
 <li>events are interactions with our page</li>
@@ -102,8 +102,8 @@ article#presentation > svg[data-marpit-svg] > foreignObject[data-marpit-advanced
 </ul>
 <footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="3" data-marpit-pagination-total="23" style="--paginate:true;--theme:gaia;">
-<h1>Event Handlers</h1>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="3" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+<h2>Event Handlers</h2>
 <ul>
 <li>JavaScript code that runs when an event occurs</li>
 <li>written as a function</li>
@@ -111,37 +111,54 @@ article#presentation > svg[data-marpit-svg] > foreignObject[data-marpit-advanced
 </ul>
 <footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="4" data-marpit-pagination-total="23" style="--paginate:true;--theme:gaia;">
-<h1>Events and DOM Nodes</h1>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="4" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+<h2>Events and DOM Nodes</h2>
 <ul>
 <li>every DOM Element node can have events associated with it</li>
 <li>use <code>.addEventListener()</code></li>
 <li>first argument is the event name such as <code>'click'</code></li>
 <li>second argument is a callback function (the event handler)</li>
 </ul>
-<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>const button = document.querySelector('button');
-button.addEventListener('click', function() {
-  alert('Button clicked.');
+<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>const one = document.querySelector('li');
+one.addEventListener('click', function() {
+  alert('Item clicked.');
 });
 </span></span></foreignObject></svg></code></pre>
 <footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="5" data-marpit-pagination-total="23" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="5" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
 <h2>Deleting an Event Handler</h2>
 <ul>
 <li>use a named callback function</li>
 <li>this provides a function reference that we can pass to <code>.removeEventListener()</code></li>
 </ul>
-<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>const button = document.querySelector('button');
+<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>const one = document.querySelector('li');
 function once() {
-  alert('Done.');
+  alert('Item clicked once.');
   button.removeEventListener('click', once);
 }
-button.addEventListener('click', once);
+one.addEventListener('click', once);
 </span></span></foreignObject></svg></code></pre>
 <footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="6" data-marpit-pagination-total="23" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="6" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+<h2>Running an Event Handler Once</h2>
+<ul>
+<li>an option object can be added to <code>.addEventListener()</code></li>
+<li>one of the options is to run the event only once:</li>
+</ul>
+<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>const one = document.querySelector('li');
+
+button.addEventListener('click', function(event) {
+  alert('Item clicked once.');
+}, {once: true});
+</span></span></foreignObject></svg></code></pre>
+<ul>
+<li>does not work in IE</li>
+</ul>
+<footer>Module 6: Handling Events</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="7" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
 <h1>Event Objects</h1>
 <ul>
 <li>callback functions can accept a parameter called the event object</li>
@@ -155,7 +172,7 @@ button.addEventListener('click', once);
 </ul>
 <footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="7" data-marpit-pagination-total="23" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="8" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
 <h1>Keyboard Events</h1>
 <ul>
 <li><code>keydown</code> and <code>keyup</code> events</li>
@@ -172,7 +189,7 @@ button.addEventListener('click', once);
 </ul>
 <footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="8" data-marpit-pagination-total="23" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="9" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
 <h1>Keyboard Events Continued …</h1>
 <ul>
 <li>event occurs on element that has focus (or document.body)</li>
@@ -185,7 +202,7 @@ button.addEventListener('click', once);
 </ul>
 <footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="9" data-marpit-pagination-total="23" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="10" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
 <h2>Key Event Properties</h2>
 <ul>
 <li>
@@ -197,7 +214,7 @@ button.addEventListener('click', once);
 </ul>
 <footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="10" data-marpit-pagination-total="23" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="11" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
 <h2>Key Event Properties Continued …</h2>
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>document.body.addEventListener('keydown', function(event) {
   console.log('Key pressed:', event.key);
@@ -217,7 +234,7 @@ button.addEventListener('click', once);
 </span></span></foreignObject></svg></code></pre>
 <footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="11" data-marpit-pagination-total="23" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="12" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
 <h1>Mouse Clicks</h1>
 <ul>
 <li><code>mousedown</code>, <code>mouseup</code>, <code>click</code>, and <code>dblclick</code> events</li>
@@ -225,7 +242,7 @@ button.addEventListener('click', once);
 </ul>
 <footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="12" data-marpit-pagination-total="23" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="13" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
 <h2>Mouse Clicks Continued …</h2>
 <ul>
 <li><code>event.button</code> takes into account user customization
@@ -240,7 +257,7 @@ button.addEventListener('click', once);
 </ul>
 <footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="13" data-marpit-pagination-total="23" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="14" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
 <h2>Mouse Button Event Order</h2>
 <ol>
 <li><code>mousedown</code></li>
@@ -254,7 +271,7 @@ button.addEventListener('click', once);
 </ol>
 <footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="14" data-marpit-pagination-total="23" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="15" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
 <h2>Mouse Motion</h2>
 <ul>
 <li><code>mousemove</code> event every time the mouse moves</li>
@@ -262,7 +279,7 @@ button.addEventListener('click', once);
 </ul>
 <footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="15" data-marpit-pagination-total="23" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="16" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
 <h1>Scroll Events</h1>
 <ul>
 <li><code>scroll</code> event when page scrolls</li>
@@ -271,7 +288,7 @@ button.addEventListener('click', once);
 </ul>
 <footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="16" data-marpit-pagination-total="23" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="17" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
 <h1>Focus Events</h1>
 <ul>
 <li><code>focus</code> and <code>blur</code></li>
@@ -282,16 +299,7 @@ button.addEventListener('click', once);
 </ul>
 <footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="17" data-marpit-pagination-total="23" style="--paginate:true;--theme:gaia;">
-<h1>Load Event</h1>
-<ul>
-<li><code>load</code> event fires on the <code>window</code> object when the window finishes loading</li>
-<li>often used to schedule initialization actions that require the DOM</li>
-<li>element that load external files, such as images, also have a load event</li>
-</ul>
-<footer>Module 6: Handling Events</footer>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="18" data-marpit-pagination-total="23" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="18" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
 <h1>Script Execution Timeline</h1>
 <ul>
 <li>no two scripts can run at the same time</li>
@@ -300,7 +308,7 @@ button.addEventListener('click', once);
 </ul>
 <footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="19" data-marpit-pagination-total="23" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="19" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
 <h1>Setting Timers</h1>
 <ul>
 <li><code>setTimeout</code> to run a function after an amount of time</li>
@@ -310,7 +318,7 @@ button.addEventListener('click', once);
 </ul>
 <footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="20" data-marpit-pagination-total="23" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="20" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
 <h1>Setting Timers Continued …</h1>
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>const button = document.querySelector('button');
 const list = document.querySelector('ul');
@@ -329,23 +337,71 @@ button.addEventListener('click', function(event){
 </span></span></foreignObject></svg></code></pre>
 <footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="21" data-marpit-pagination-total="23" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="21" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+<h1>Propagation</h1>
+<ul>
+<li>if an event occurs on a child element it will trigger the event handler on the parent element</li>
+<li>if both have handlers the more specific one runs first</li>
+<li><code>event.stopPropogation()</code> method on the event object can stop this</li>
+</ul>
+<footer>Module 6: Handling Events</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="22" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+<h1>Delegation</h1>
+<ul>
+<li>an event handler can be placed on the parent element to handle the events on child elements</li>
+</ul>
+<footer>Module 6: Handling Events</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="23" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+<h2><code>target</code> Property</h2>
+<ul>
+<li>most events have an <code>event.target</code> property</li>
+<li>this is the element that the event occurred on</li>
+<li>often used to delegate event handling to parent element</li>
+</ul>
+<footer>Module 6: Handling Events</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="24" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
+<h2>Default Actions</h2>
+<ul>
+<li>some element have default actions
+<ul>
+<li>such as a form being submitted to a server or a link being followed</li>
+</ul>
+</li>
+<li>the event handler runs before the default action</li>
+<li><code>event.preventDefault()</code> method can stop the default action</li>
+</ul>
+<footer>Module 6: Handling Events</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="25" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
 <h1>Summary</h1>
 <ul>
 <li>event handlers make it possible to detect and react to external events</li>
 <li>each event has a type - eg. 'click'</li>
+<li>events <em>propagate</em> to their parent elements
+<ul>
+<li><code>event.stopPropagation()</code></li>
+</ul>
+</li>
+<li>some elements have default actions
+<ul>
+<li><code>event.preventDefault()</code></li>
+</ul>
+</li>
 <li>only one piece of JavaScript can run at once</li>
 </ul>
 <footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="22" data-marpit-pagination-total="23" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-footer="Module 6: Handling Events" data-paginate="true" data-theme="gaia" data-marpit-pagination="26" data-marpit-pagination-total="27" style="--paginate:true;--theme:gaia;">
 <h1>Reference</h1>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/Events">MDN Events</a></li>
 </ul>
 <footer>Module 6: Handling Events</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-class="lead" data-theme="gaia" class="lead" style="--class:lead;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-class="lead" data-theme="gaia" class="lead" style="--class:lead;--theme:gaia;">
 <h1>☀</h1>
 </section>
 </foreignObject></svg></article><script>!function(){"use strict";const t=()=>"Apple Computer, Inc."===navigator.vendor?[e]:[];function e(t){Array.from(document.getElementsByTagName("svg"),e=>{if(e.hasAttribute("data-marpit-svg")){const{clientHeight:r,clientWidth:a}=e;e.style.transform||(e.style.transform="translateZ(0)");const i=t||e.currentScale||1,n=e.viewBox.baseVal.width/i,s=e.viewBox.baseVal.height/i,o=Math.min(r/s,a/n);Array.from(e.querySelectorAll(":scope > foreignObject"),t=>{const e=t.x.baseVal.value,i=t.y.baseVal.value;Array.from(t.querySelectorAll(":scope > section"),t=>{t.style.transformOrigin||(t.style.transformOrigin="0 0");const l=(a-o*n)/2-e,c=(r-o*s)/2-i;t.style.transform=`translate3d(${l}px,${c}px,0) scale(${o}) translate(${e}px,${i}px)`})})}})}const r="data-marp-fitting",a="data-marp-fitting-code",i="data-marp-fitting-math",n=(t,e,r)=>{if(t.getAttribute(e)!==r)return t.setAttribute(e,r),!0};!function(e=!0){const s=()=>{for(const e of t())e();Array.from(document.querySelectorAll(`svg[${r}="svg"]`),t=>{const e=t.firstChild,r=e.firstChild,{scrollWidth:s,scrollHeight:o}=r;let l,c=1;if(t.hasAttribute(a)&&(l=t.parentElement.parentElement),t.hasAttribute(i)&&(l=t.parentElement),l){const t=getComputedStyle(l),e=Math.ceil(l.clientWidth-parseFloat(t.paddingLeft)-parseFloat(t.paddingRight));e&&(c=e)}const m=Math.max(s,c),p=Math.max(o,1),g=`0 0 ${m} ${p}`;n(e,"width",`${m}`),n(e,"height",`${p}`),n(t,"preserveAspectRatio",getComputedStyle(t).getPropertyValue("--preserve-aspect-ratio")||"xMinYMin meet"),n(t,"viewBox",g)&&t.classList.toggle("__reflow__")}),e&&window.requestAnimationFrame(s)};s()}()}();
