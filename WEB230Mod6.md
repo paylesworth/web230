@@ -70,8 +70,6 @@ button.addEventListener('click', once);
 
 ---
 
----
-
 # Events
 
 - events are interactions with our page
@@ -276,8 +274,6 @@ button.addEventListener('click', function(event){
   }
 });
 ```
-
----
 
 ---
 
