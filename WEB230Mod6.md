@@ -1,7 +1,8 @@
 ---
 marp: true
 theme: gaia
-footer: 'Module 6: Handling Events'
+footer: ''
+oldfooter: 'Module 6: Handling Events'
 paginate: true
 Author: Phil Aylesworth
 Date: 2018-04-02

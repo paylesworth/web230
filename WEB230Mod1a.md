@@ -1,7 +1,8 @@
 ---
 marp: true
 theme: gaia
-footer: 'WEB230: Chapter 1: Values, Types, and Operators'
+footer: ''
+oldfooter: 'WEB230: Chapter 1: Values, Types, and Operators'
 paginate: true
 author: 'Phil Aylesworth'
 date: '2018-01-18'
@@ -33,7 +34,7 @@ _footer: ""
 - booleans
 - objects
 - functions
-- undefined
+- undefined / null
 
 ---
 
@@ -56,7 +57,7 @@ _footer: ""
 - `*` Multiplication
 - `/` Division
 - `%` Modulus (remainder)
-- `**` Exponent (New)
+- `**` Exponent
 
 ---
 
@@ -150,7 +151,7 @@ will result in:
 
 ## Template Literals
 
-- Backtick-quoted strings, usually called _template literals_, can do more than single or double quoted strings:
+- Backtick-quoted strings, called _template literals_, can do more than single or double quoted strings:
   - span lines
   - embed other values
 
@@ -238,7 +239,7 @@ false ? 1 : 2  // 2
 - `null`
 - `undefined`
 - If something does not produce a meaningful result it will produce `undefined`
-- `null` is an accident of JS design
+- `null` has a slightly different meaning that we will see later
 
 ---
 

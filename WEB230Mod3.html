@@ -93,26 +93,24 @@ article#presentation > svg[data-marpit-svg] > foreignObject[data-marpit-advanced
 <h1>WEB230: JavaScript 1</h1>
 <h2>Module 3: Higher-Order Functions</h2>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-footer="WEB230: Chapter 5: Higher-Order Functions" data-paginate="true" data-theme="gaia" data-marpit-pagination="2" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-theme="gaia" data-marpit-pagination="2" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
 <h2>Abstraction</h2>
 <ul>
 <li>Hide programming details</li>
 <li>Talk about problems at a higher (or more abstract) level</li>
 </ul>
-<footer>WEB230: Chapter 5: Higher-Order Functions</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-footer="WEB230: Chapter 5: Higher-Order Functions" data-paginate="true" data-theme="gaia" data-marpit-pagination="3" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-theme="gaia" data-marpit-pagination="3" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
 <h2>Abstracting Repetition</h2>
 <ul>
 <li>Let's log each element in a sequence:</li>
 </ul>
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>for (let i = 0; i &lt; 10; i++) {
-  console.log(i);
+    console.log(i);
 }
 </span></span></foreignObject></svg></code></pre>
-<footer>WEB230: Chapter 5: Higher-Order Functions</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-footer="WEB230: Chapter 5: Higher-Order Functions" data-paginate="true" data-theme="gaia" data-marpit-pagination="4" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="gaia" data-marpit-pagination="4" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
 <ul>
 <li>With abstraction, this becomes:</li>
 </ul>
@@ -122,17 +120,16 @@ article#presentation > svg[data-marpit-svg] > foreignObject[data-marpit-advanced
 <li>But then we have to define the <code>repeatLog()</code> function:</li>
 </ul>
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>function repeatLog(n) {
-  for (let i = 0; i &lt; n; i++) {
-    console.log(i);
-  }
+    for (let i = 0; i &lt; n; i++) {
+        console.log(i);
+    }
 }
 </span></span></foreignObject></svg></code></pre>
 <ul>
 <li>This makes the code more readable</li>
 </ul>
-<footer>WEB230: Chapter 5: Higher-Order Functions</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-footer="WEB230: Chapter 5: Higher-Order Functions" data-paginate="true" data-theme="gaia" data-marpit-pagination="5" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="gaia" data-marpit-pagination="5" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
 <ul>
 <li>Maybe we need to do other things than just logging</li>
 <li>We can update our function to &quot;do something&quot;</li>
@@ -143,13 +140,12 @@ article#presentation > svg[data-marpit-svg] > foreignObject[data-marpit-advanced
 </li>
 <li>Let's pass our action as a function value</li>
 </ul>
-<footer>WEB230: Chapter 5: Higher-Order Functions</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-footer="WEB230: Chapter 5: Higher-Order Functions" data-paginate="true" data-theme="gaia" data-marpit-pagination="6" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="gaia" data-marpit-pagination="6" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>function repeat(n, action) {
-  for (let i = 0; i &lt; n; i++) {
-    action(i);
-  }
+    for (let i = 0; i &lt; n; i++) {
+        action(i);
+    }
 }
 
 repeat(3, console.log);
@@ -164,9 +160,8 @@ repeat(5, i =&gt; labels.push(`Unit ${i + 1}`) );
 console.log(labels);
 // → [&quot;Unit 1&quot;, &quot;Unit 2&quot;, &quot;Unit 3&quot;, &quot;Unit 4&quot;, &quot;Unit 5&quot;]
 </span></span></foreignObject></svg></code></pre>
-<footer>WEB230: Chapter 5: Higher-Order Functions</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-footer="WEB230: Chapter 5: Higher-Order Functions" data-paginate="true" data-theme="gaia" data-marpit-pagination="7" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="gaia" data-marpit-pagination="7" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
 <h2>Higher-Order Functions</h2>
 <ul>
 <li>Functions that operate on other functions
@@ -177,22 +172,20 @@ console.log(labels);
 </li>
 <li>When we pass a function to another function, the function we pass is known as a <strong>Callback Function</strong> or just a <strong>Callback</strong></li>
 </ul>
-<footer>WEB230: Chapter 5: Higher-Order Functions</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-footer="WEB230: Chapter 5: Higher-Order Functions" data-paginate="true" data-theme="gaia" data-marpit-pagination="8" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-theme="gaia" data-marpit-pagination="8" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
 <h2>Higher-Order Functions Continued …</h2>
 <ul>
 <li>We can have functions that create new functions.</li>
 </ul>
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>function greaterThan(n) {
-  return function(m) { return m &gt; n; };
+    return function(m) { return m &gt; n; };
 }
 let greaterThan10 = greaterThan(10);
 console.log(greaterThan10(11));
 </span></span></foreignObject></svg></code></pre>
-<footer>WEB230: Chapter 5: Higher-Order Functions</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-footer="WEB230: Chapter 5: Higher-Order Functions" data-paginate="true" data-theme="gaia" data-marpit-pagination="9" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="gaia" data-marpit-pagination="9" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
 <h2>Built-in Array Method</h2>
 <ul>
 <li>Arrays have a built-in method <code>.forEach()</code> that will act on each element of the array</li>
@@ -200,9 +193,8 @@ console.log(greaterThan10(11));
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>let letters = [&quot;A&quot;, &quot;B&quot;];
 letters.forEach(el =&gt; console.log(el));
 </span></span></foreignObject></svg></code></pre>
-<footer>WEB230: Chapter 5: Higher-Order Functions</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-footer="WEB230: Chapter 5: Higher-Order Functions" data-paginate="true" data-theme="gaia" data-marpit-pagination="10" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="gaia" data-marpit-pagination="10" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
 <h2>Filtering an Array</h2>
 <ul>
 <li>In JavaScript we can use an array method called <code>.filter()</code>.</li>
@@ -213,9 +205,8 @@ letters.forEach(el =&gt; console.log(el));
 
 console.log( nums.filter( num =&gt; num%3 === 0 ) );
 </span></span></foreignObject></svg></code></pre>
-<footer>WEB230: Chapter 5: Higher-Order Functions</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-footer="WEB230: Chapter 5: Higher-Order Functions" data-paginate="true" data-theme="gaia" data-marpit-pagination="11" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="gaia" data-marpit-pagination="11" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
 <ul>
 <li>Filter will loop through the array
 <ul>
@@ -226,9 +217,8 @@ console.log( nums.filter( num =&gt; num%3 === 0 ) );
 <li>It will check each item to make sure it meets our condition</li>
 <li>If the function returns <code>true</code> the element is included in the new array</li>
 </ul>
-<footer>WEB230: Chapter 5: Higher-Order Functions</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-footer="WEB230: Chapter 5: Higher-Order Functions" data-paginate="true" data-theme="gaia" data-marpit-pagination="12" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-theme="gaia" data-marpit-pagination="12" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
 <h2>Transforming With Map</h2>
 <ul>
 <li>The <code>.map()</code> method transforms an array by applying a function to all of its elements and building a new array</li>
@@ -236,9 +226,8 @@ console.log( nums.filter( num =&gt; num%3 === 0 ) );
 <li>It's content will be “mapped” to a new form</li>
 <li>The function takes one element as a parameter and returns a new element</li>
 </ul>
-<footer>WEB230: Chapter 5: Higher-Order Functions</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-footer="WEB230: Chapter 5: Higher-Order Functions" data-paginate="true" data-theme="gaia" data-marpit-pagination="13" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-theme="gaia" data-marpit-pagination="13" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
 <ul>
 <li>Suppose I wanted an array of the square of each number in an array</li>
 <li>We use the map function to create this new array</li>
@@ -251,9 +240,8 @@ console.log( nums.map( num =&gt; num*num) );
 <li><code>.map()</code> is a standard method on arrays</li>
 <li>the new array will always be the same size as the original array</li>
 </ul>
-<footer>WEB230: Chapter 5: Higher-Order Functions</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-footer="WEB230: Chapter 5: Higher-Order Functions" data-paginate="true" data-theme="gaia" data-marpit-pagination="14" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-theme="gaia" data-marpit-pagination="14" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
 <h2>Summarizing With Reduce</h2>
 <ul>
 <li>Another common pattern is to compute a single value from an array</li>
@@ -261,9 +249,8 @@ console.log( nums.map( num =&gt; num*num) );
 <li>The higher-order operation that represents this pattern is called &quot;reduce&quot;</li>
 <li>When summing numbers, you’d start with the number zero and, for each element, add the current number</li>
 </ul>
-<footer>WEB230: Chapter 5: Higher-Order Functions</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-footer="WEB230: Chapter 5: Higher-Order Functions" data-paginate="true" data-theme="gaia" data-marpit-pagination="15" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-theme="gaia" data-marpit-pagination="15" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
 <ul>
 <li><code>.reduce()</code> takes a function to act on each element and a starting value</li>
 <li>If your array contains at least one element, and the first element can be used as the initial value, you can leave off the start value</li>
@@ -273,9 +260,8 @@ console.log( nums.map( num =&gt; num*num) );
 console.log(nums.reduce( (sum, num) =&gt; sum + num, 0 ) );
 console.log(nums.reduce( (sum, num) =&gt; sum + num ) );
 </span></span></foreignObject></svg></code></pre>
-<footer>WEB230: Chapter 5: Higher-Order Functions</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-footer="WEB230: Chapter 5: Higher-Order Functions" data-paginate="true" data-theme="gaia" data-marpit-pagination="16" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-theme="gaia" data-marpit-pagination="16" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
 <h2>Sorting (not in book)</h2>
 <ul>
 <li>We can sort arrays <strong>in place</strong> using the <code>.sort()</code> method</li>
@@ -285,9 +271,8 @@ console.log(nums.reduce( (sum, num) =&gt; sum + num ) );
 
 console.log( pets.sort() );
 </span></span></foreignObject></svg></code></pre>
-<footer>WEB230: Chapter 5: Higher-Order Functions</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-footer="WEB230: Chapter 5: Higher-Order Functions" data-paginate="true" data-theme="gaia" data-marpit-pagination="17" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-paginate="true" data-theme="gaia" data-marpit-pagination="17" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
 <ul>
 <li>by default, <code>.sort()</code> sorts strings</li>
 <li>it doesn't work with numbers (or other data types)</li>
@@ -296,9 +281,8 @@ console.log( pets.sort() );
 
 console.log( nums.sort() ) );
 </span></span></foreignObject></svg></code></pre>
-<footer>WEB230: Chapter 5: Higher-Order Functions</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-footer="WEB230: Chapter 5: Higher-Order Functions" data-paginate="true" data-theme="gaia" data-marpit-pagination="18" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-paginate="true" data-theme="gaia" data-marpit-pagination="18" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
 <ul>
 <li>you can pass a function that will determine order - useful for sorting values that are not strings</li>
 </ul>
@@ -310,9 +294,8 @@ console.log( nums.sort((a,b) =&gt; a-b) );
 <li>The function takes two arguments which will be two elements of the array</li>
 <li>Your function should return: - a negative number (or 0) if the first comes first - a positive number if the second comes first</li>
 </ul>
-<footer>WEB230: Chapter 5: Higher-Order Functions</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-footer="WEB230: Chapter 5: Higher-Order Functions" data-paginate="true" data-theme="gaia" data-marpit-pagination="19" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-paginate="true" data-theme="gaia" data-marpit-pagination="19" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
 <h2>Composability</h2>
 <ul>
 <li>Higher-order functions start to shine when you need to compose functions</li>
@@ -323,18 +306,16 @@ console.log( nums.sort((a,b) =&gt; a-b) );
 console.log( nums.filter( num =&gt; num%3 === 0 )
             .reduce( (sum, num) =&gt; sum + num ) );
 </span></span></foreignObject></svg></code></pre>
-<footer>WEB230: Chapter 5: Higher-Order Functions</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-footer="WEB230: Chapter 5: Higher-Order Functions" data-paginate="true" data-theme="gaia" data-marpit-pagination="20" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-paginate="true" data-theme="gaia" data-marpit-pagination="20" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
 <h2>Summary</h2>
 <ul>
 <li>Being able to pass function values to other functions is a very useful aspect of JavaScript</li>
 <li>It allows us to write computations with “gaps” in them</li>
 <li>Functions fill in these gaps by providing functionality</li>
 </ul>
-<footer>WEB230: Chapter 5: Higher-Order Functions</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-footer="WEB230: Chapter 5: Higher-Order Functions" data-paginate="true" data-theme="gaia" data-marpit-pagination="21" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-paginate="true" data-theme="gaia" data-marpit-pagination="21" data-marpit-pagination-total="22" style="--paginate:true;--theme:gaia;">
 <ul>
 <li>Arrays provide a number of useful higher-order methods
 <ul>
@@ -346,7 +327,6 @@ console.log( nums.filter( num =&gt; num%3 === 0 )
 </ul>
 </li>
 </ul>
-<footer>WEB230: Chapter 5: Higher-Order Functions</footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-class="lead" data-theme="gaia" class="lead" style="--class:lead;--theme:gaia;">
 <h1>☀</h1>

@@ -1,7 +1,8 @@
 ---
 marp: true
 theme: gaia
-WEB230: 'WEB230: Module 5: Chapter 14: The Docment Opject Model'
+footer: ''
+oldfooter: 'WEB230: Module 5: Chapter 14: The Docment Opject Model'
 paginate: true
 Author: Phil Aylesworth
 Date: 2018-03-24

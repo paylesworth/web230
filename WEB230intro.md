@@ -12,3 +12,37 @@ Date: 2018-05-08
 ## Phil Aylesworth
 
 #### paylesworth@stclaircollege.ca
+
+---
+
+## Tools
+
+- a web browser
+
+  - Google Chrome
+  - Mozilla Firefox
+  - Apple Safari
+  - Microsoft Edge
+  - Don't use Internet Explorer!
+
+- code Sandbox
+
+  - ejs3.scweb.ca/demo
+
+---
+
+## Reference
+
+- The textbook, Eloquent JavaScript - ejs3.scweb.ca
+- W3 Schools - w3schools.com
+- Mozilla Developer Network (MDN) - developer.mozilla.org
+
+---
+
+<!--
+_class: lead
+_footer: ""
+_paginate: false
+-->
+
+# ☀

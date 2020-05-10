@@ -93,54 +93,51 @@ article#presentation > svg[data-marpit-svg] > foreignObject[data-marpit-advanced
 <h1>WEB230: JavaScript 1</h1>
 <h2>Module 7: The Secret Life of Objects</h2>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="2" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-theme="gaia" data-marpit-pagination="2" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h1>Encapsulation</h1>
 <ul>
 <li>Object Oriented programming was developed in the 1970s and ’80s</li>
 <li>the idea is to divide programs into smaller pieces</li>
 <li>each piece is responsible for managing its own state</li>
 </ul>
-<footer>Module 7: The Secret Life of Objects</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="3" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-theme="gaia" data-marpit-pagination="3" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h1>Methods</h1>
 <ul>
 <li>properties that hold functions</li>
 </ul>
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>let rabbit = {};
 rabbit.speak = function(line) {
-  console.log(`The rabbit says &quot;${line}&quot;`);
+    console.log(`The rabbit says &quot;${line}&quot;`);
 };
 
 rabbit.speak('Hello');
 </span></span></foreignObject></svg></code></pre>
-<footer>Module 7: The Secret Life of Objects</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="4" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="gaia" data-marpit-pagination="4" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h2>this</h2>
 <ul>
 <li>usually a method needs to do something with the object</li>
 <li>inside a function that is called as a method of an object, <code>this</code> refers to the object</li>
 </ul>
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>function speak(line) {
-  console.log(`The ${this.type} rabbit says &quot;${line}&quot;`);
+    console.log(`The ${this.type} rabbit says &quot;${line}&quot;`);
 }
 let whiteRabbit = {
-  type: 'white',
-  speak: speak
+    type: 'white',
+    speak: speak
 };
 whiteRabbit.speak('Oh, how late it is!');
 </span></span></foreignObject></svg></code></pre>
-<footer>Module 7: The Secret Life of Objects</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="5" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="gaia" data-marpit-pagination="5" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h2>Arrow Functions</h2>
 <ul>
 <li>arrow functions don't have their own <code>this</code></li>
 <li>instead they use <code>this</code> from the surrounding scope</li>
 </ul>
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>const speak = line =&gt; {
-  console.log(`The ${this.type} rabbit says &quot;${line}&quot;`);
+    console.log(`The ${this.type} rabbit says &quot;${line}&quot;`);
 }
 let whiteRabbit = {type: 'white', speak: speak};
 
@@ -149,9 +146,8 @@ whiteRabbit.speak('Oh, how late it is!');
 <ul>
 <li><strong>dosen't work</strong> - <code>this.type == undefined</code></li>
 </ul>
-<footer>Module 7: The Secret Life of Objects</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="6" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="gaia" data-marpit-pagination="6" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h1>Classes</h1>
 <ul>
 <li>a class defines the shape of a type of object
@@ -161,9 +157,8 @@ whiteRabbit.speak('Oh, how late it is!');
 </li>
 <li>objects based on a class are called an &quot;instance&quot; of the class</li>
 </ul>
-<footer>Module 7: The Secret Life of Objects</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="7" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="gaia" data-marpit-pagination="7" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h1>Prototypes</h1>
 <ul>
 <li>Even an empty object has properties:</li>
@@ -175,9 +170,8 @@ console.log(empty.toString());
 <ul>
 <li>It has a method called <code>toString</code></li>
 </ul>
-<footer>Module 7: The Secret Life of Objects</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="8" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-theme="gaia" data-marpit-pagination="8" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <ul>
 <li>
 <p>Objects have <strong>prototypes</strong></p>
@@ -195,9 +189,8 @@ console.log(empty.toString());
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>console.log(Object.getPrototypeOf([]) === Array.prototype);
 console.log(Object.getPrototypeOf(Array.prototype) === Object.prototype);
 </span></span></foreignObject></svg></code></pre>
-<footer>Module 7: The Secret Life of Objects</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="9" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="gaia" data-marpit-pagination="9" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h1>Prototype</h1>
 <ul>
 <li>defines properties that are shared</li>
@@ -212,9 +205,8 @@ console.log(empty.toString());
 <ul>
 <li>JavaScript prototypes can be considered informal classes</li>
 </ul>
-<footer>Module 7: The Secret Life of Objects</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="10" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="gaia" data-marpit-pagination="10" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h2>Constructors</h2>
 <ul>
 <li>constructor functions create objects that derive from some shared prototype</li>
@@ -222,21 +214,19 @@ console.log(empty.toString());
 <li>the constructor will have its <code>this</code> variable bound to a new object</li>
 <li>the new object will be returned</li>
 </ul>
-<footer>Module 7: The Secret Life of Objects</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="11" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="gaia" data-marpit-pagination="11" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h2>Constructors Continued …</h2>
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>function Rabbit(type) {
-  this.type = type;
+    this.type = type;
 }
 
 let killerRabbit = new Rabbit('killer');
 let blackRabbit = new Rabbit('black');
 console.log(blackRabbit.type);
 </span></span></foreignObject></svg></code></pre>
-<footer>Module 7: The Secret Life of Objects</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="12" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-theme="gaia" data-marpit-pagination="12" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h2>Constructors Continued …</h2>
 <ul>
 <li>the constructor has a property named <code>prototype</code>
@@ -247,22 +237,20 @@ console.log(blackRabbit.type);
 </li>
 </ul>
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>Rabbit.prototype.speak = function(line) {
-  console.log(`The ${this.type} rabbit says &quot;${line}&quot;`);
+    console.log(`The ${this.type} rabbit says &quot;${line}&quot;`);
 };
 blackRabbit.speak('Doom...');
 </span></span></foreignObject></svg></code></pre>
-<footer>Module 7: The Secret Life of Objects</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="13" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-theme="gaia" data-marpit-pagination="13" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h1>Class Notation</h1>
 <ul>
 <li>a JavaScript <code>class</code> is a constructor function</li>
 <li>newer, less awkward notation</li>
 <li>not supported in Internet Explorer</li>
 </ul>
-<footer>Module 7: The Secret Life of Objects</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="14" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-theme="gaia" data-marpit-pagination="14" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h2>Class Notation Continued …</h2>
 <ul>
 <li>the <code>class</code> keyword starts the declaration</li>
@@ -276,25 +264,23 @@ blackRabbit.speak('Doom...');
 </li>
 <li>the <code>class</code> block is run in strict mode</li>
 </ul>
-<footer>Module 7: The Secret Life of Objects</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="15" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-theme="gaia" data-marpit-pagination="15" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h2>Class Notation Continued …</h2>
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>class Rabbit {
-  constructor(type) {
-    this.type = type;
-  }
-  speak(line) {
-    console.log(`The ${this.type} rabbit says &quot;${line}&quot;`);
-  }
+    constructor(type) {
+        this.type = type;
+    }
+    speak(line) {
+        console.log(`The ${this.type} rabbit says &quot;${line}&quot;`);
+    }
 }
 
 let killerRabbit = new Rabbit('killer');
 let blackRabbit = new Rabbit('black');
 </span></span></foreignObject></svg></code></pre>
-<footer>Module 7: The Secret Life of Objects</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="16" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-theme="gaia" data-marpit-pagination="16" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h2>Overriding Derived Properties</h2>
 <ul>
 <li>If the object does not have a property it will look to the prototype</li>
@@ -310,9 +296,8 @@ killerRabbit.teeth = 'long, sharp, and bloody';
 console.log(killerRabbit.teeth);
 console.log(blackRabbit.teeth);
 </span></span></foreignObject></svg></code></pre>
-<footer>Module 7: The Secret Life of Objects</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="17" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-paginate="true" data-theme="gaia" data-marpit-pagination="17" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h2><code>in</code> Operator</h2>
 <ul>
 <li>tells us if an object has access to a property</li>
@@ -323,9 +308,8 @@ console.log(blackRabbit.teeth);
 console.log('teeth' in killerRabbit);
 // true
 </span></span></foreignObject></svg></code></pre>
-<footer>Module 7: The Secret Life of Objects</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="18" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-paginate="true" data-theme="gaia" data-marpit-pagination="18" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h2><code>.hasOwnProperty()</code> Method</h2>
 <ul>
 <li>check if a property belongs to the object but <strong>not</strong> on it's prototype</li>
@@ -337,20 +321,18 @@ console.log(killerRabbit.hasOwnProperty('teeth'));
 // false
 
 </span></span></foreignObject></svg></code></pre>
-<footer>Module 7: The Secret Life of Objects</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="19" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-paginate="true" data-theme="gaia" data-marpit-pagination="19" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h2><code>for…in</code> Loop</h2>
 <ul>
 <li><code>for…in</code> will loop through properties of an object</li>
 </ul>
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>for( let prop in blackRabbit ) {
-  console.log(prop, blackRabbit[prop]);
+    console.log(prop, blackRabbit[prop]);
 }
 </span></span></foreignObject></svg></code></pre>
-<footer>Module 7: The Secret Life of Objects</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="20" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-paginate="true" data-theme="gaia" data-marpit-pagination="20" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h1>Polymorphism</h1>
 <ul>
 <li>polymorphism is when a method or an operator does different things on different data types</li>
@@ -362,72 +344,66 @@ console.log(killerRabbit.hasOwnProperty('teeth'));
 </li>
 <li>We can write our own <code>.toString()</code>, to work with our object</li>
 </ul>
-<footer>Module 7: The Secret Life of Objects</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="21" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-paginate="true" data-theme="gaia" data-marpit-pagination="21" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h1>Polymorphism Continued …</h1>
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>class Rabbit {
-  ...
-  toString() {
-    return this.type + ' rabbit';
-  }
+    ...
+    toString() {
+        return this.type + ' rabbit';
+    }
 }
 </span></span></foreignObject></svg></code></pre>
-<footer>Module 7: The Secret Life of Objects</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="22" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-paginate="true" data-theme="gaia" data-marpit-pagination="22" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h1>Getters and Setters</h1>
 <ul>
 <li>Often need to control setting or getting values of a property</li>
 <li>This created the style of writing getter and setter methods</li>
 </ul>
-<footer>Module 7: The Secret Life of Objects</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="23" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-paginate="true" data-theme="gaia" data-marpit-pagination="23" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h2>Getters and Setters Continued …</h2>
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>class Temperature {
-  constructor(celsius) {
-    this.celsius = celsius;
-  }
-  getFahrenheit() {
-    return this.celsius * 1.8 + 32;
-  }
-  setFahrenheit(value) {
-    this.celsius = (value - 32) / 1.8;
-  }
+    constructor(celsius) {
+        this.celsius = celsius;
+    }
+    getFahrenheit() {
+        return this.celsius * 1.8 + 32;
+    }
+    setFahrenheit(value) {
+        this.celsius = (value - 32) / 1.8;
+    }
 }
 
 let temp = new Temperature(22);
 console.log(temp.getFahrenheit());
 </span></span></foreignObject></svg></code></pre>
-<footer>Module 7: The Secret Life of Objects</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="24" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-paginate="true" data-theme="gaia" data-marpit-pagination="24" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h2>JavaScript has Getters and Setters</h2>
 <ul>
 <li>JavaScript has built-in getters and setters</li>
 <li>Act like properties but call methods</li>
 </ul>
-<footer>Module 7: The Secret Life of Objects</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-footer="Module 7: The Secret Life of Objects" data-paginate="true" data-theme="gaia" data-marpit-pagination="25" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-paginate="true" data-theme="gaia" data-marpit-pagination="25" data-marpit-pagination-total="26" style="--paginate:true;--theme:gaia;">
 <h2>Getters and Setters Continued …</h2>
 <pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>class Temperature {
-  constructor(celsius) {
-    this.celsius = celsius;
-  }
-  get fahrenheit() {
-    return this.celsius * 1.8 + 32;
-  }
-  set fahrenheit(value) {
-    this.celsius = (value - 32) / 1.8;
-  }
+    constructor(celsius) {
+        this.celsius = celsius;
+    }
+    get fahrenheit() {
+        return this.celsius * 1.8 + 32;
+    }
+    set fahrenheit(value) {
+        this.celsius = (value - 32) / 1.8;
+    }
 }
 
 let temp = new Temperature(22);
 console.log(temp.fahrenheit);
 </span></span></foreignObject></svg></code></pre>
-<footer>Module 7: The Secret Life of Objects</footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-class="lead" data-theme="gaia" class="lead" style="--class:lead;--theme:gaia;">
 <h1>☀</h1>

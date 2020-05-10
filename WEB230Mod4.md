@@ -1,7 +1,8 @@
 ---
 marp: true
 theme: gaia
-footer: 'WEB230: Module 4: Chapter 13: JavaScript and the Browser'
+footer: ''
+oldfooter: 'WEB230: Module 4: Chapter 13: JavaScript and the Browser'
 paginate: true
 Author: Phil Aylesworth
 Date: 2018-03-04

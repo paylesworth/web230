@@ -1,7 +1,8 @@
 ---
 marp: true
 theme: gaia
-footer: 'Module 7: The Secret Life of Objects'
+footer: ''
+oldfooter: 'Module 7: The Secret Life of Objects'
 paginate: true
 Author: Phil Aylesworth
 Date: 2018-02-15
@@ -35,7 +36,7 @@ _footer: ""
 ```text
 let rabbit = {};
 rabbit.speak = function(line) {
-  console.log(`The rabbit says "${line}"`);
+    console.log(`The rabbit says "${line}"`);
 };
 
 rabbit.speak('Hello');
@@ -50,11 +51,11 @@ rabbit.speak('Hello');
 
 ```text
 function speak(line) {
-  console.log(`The ${this.type} rabbit says "${line}"`);
+    console.log(`The ${this.type} rabbit says "${line}"`);
 }
 let whiteRabbit = {
-  type: 'white',
-  speak: speak
+    type: 'white',
+    speak: speak
 };
 whiteRabbit.speak('Oh, how late it is!');
 ```
@@ -68,7 +69,7 @@ whiteRabbit.speak('Oh, how late it is!');
 
 ```text
 const speak = line => {
-  console.log(`The ${this.type} rabbit says "${line}"`);
+    console.log(`The ${this.type} rabbit says "${line}"`);
 }
 let whiteRabbit = {type: 'white', speak: speak};
 
@@ -144,7 +145,7 @@ console.log(empty.toString());
 
 ```text
 function Rabbit(type) {
-  this.type = type;
+    this.type = type;
 }
 
 let killerRabbit = new Rabbit('killer');
@@ -162,7 +163,7 @@ console.log(blackRabbit.type);
 
 ```text
 Rabbit.prototype.speak = function(line) {
-  console.log(`The ${this.type} rabbit says "${line}"`);
+    console.log(`The ${this.type} rabbit says "${line}"`);
 };
 blackRabbit.speak('Doom...');
 ```
@@ -193,12 +194,12 @@ blackRabbit.speak('Doom...');
 
 ```text
 class Rabbit {
-  constructor(type) {
-    this.type = type;
-  }
-  speak(line) {
-    console.log(`The ${this.type} rabbit says "${line}"`);
-  }
+    constructor(type) {
+        this.type = type;
+    }
+    speak(line) {
+        console.log(`The ${this.type} rabbit says "${line}"`);
+    }
 }
 
 let killerRabbit = new Rabbit('killer');
@@ -261,7 +262,7 @@ console.log(killerRabbit.hasOwnProperty('teeth'));
 
 ```text
 for( let prop in blackRabbit ) {
-  console.log(prop, blackRabbit[prop]);
+    console.log(prop, blackRabbit[prop]);
 }
 ```
 
@@ -281,10 +282,10 @@ for( let prop in blackRabbit ) {
 
 ```text
 class Rabbit {
-  ...
-  toString() {
-    return this.type + ' rabbit';
-  }
+    ...
+    toString() {
+        return this.type + ' rabbit';
+    }
 }
 ```
 
@@ -301,15 +302,15 @@ class Rabbit {
 
 ```text
 class Temperature {
-  constructor(celsius) {
-    this.celsius = celsius;
-  }
-  getFahrenheit() {
-    return this.celsius * 1.8 + 32;
-  }
-  setFahrenheit(value) {
-    this.celsius = (value - 32) / 1.8;
-  }
+    constructor(celsius) {
+        this.celsius = celsius;
+    }
+    getFahrenheit() {
+        return this.celsius * 1.8 + 32;
+    }
+    setFahrenheit(value) {
+        this.celsius = (value - 32) / 1.8;
+    }
 }
 
 let temp = new Temperature(22);
@@ -329,15 +330,15 @@ console.log(temp.getFahrenheit());
 
 ```text
 class Temperature {
-  constructor(celsius) {
-    this.celsius = celsius;
-  }
-  get fahrenheit() {
-    return this.celsius * 1.8 + 32;
-  }
-  set fahrenheit(value) {
-    this.celsius = (value - 32) / 1.8;
-  }
+    constructor(celsius) {
+        this.celsius = celsius;
+    }
+    get fahrenheit() {
+        return this.celsius * 1.8 + 32;
+    }
+    set fahrenheit(value) {
+        this.celsius = (value - 32) / 1.8;
+    }
 }
 
 let temp = new Temperature(22);

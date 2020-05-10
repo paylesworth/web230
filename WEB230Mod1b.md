@@ -1,7 +1,7 @@
 ---
 marp: true
 theme: gaia
-footer: 'WEB230: Chapter 2: Program Structure'
+footer: ""
 paginate: true
 Author: Phil Aylesworth
 Date: 2018-01-18
@@ -78,8 +78,8 @@ dog = "Rex";
 
 ## The Environment
 
-- collection of variables and their values that exist
-- there variables that are part of the language standard
+- collection of variables and their values that already exist
+- they are variables that are part of the language standard
   - allow access to the surrounding system
 
 ---

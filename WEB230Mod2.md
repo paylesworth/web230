@@ -1,7 +1,8 @@
 ---
 marp: true
 theme: gaia
-footer: 'WEB230: Chapter 4: Data Structures: Objects and Arrays'
+footer: ''
+oldfooter: 'WEB230: Chapter 4: Data Structures: Objects and Arrays'
 paginate: true
 Author: Phil Aylesworth
 Date: 2018-01-29
@@ -216,7 +217,7 @@ We can loop through the elements of an array like this:
 ```text
 const myPets = ['dog', 'cat', 'rat', 'snake'];
 for(let i=0; i<myPets.length; i++) {
-  console.log(myPets[i]);
+    console.log(myPets[i]);
 }
 ```
 
@@ -229,7 +230,7 @@ This is such a common task that some special loops were created, like the `for..
 ```text
 const myPets = ['dog', 'cat', 'rat', 'snake'];
 for(let i in myPets) {
-  console.log(myPets[i]);
+    console.log(myPets[i]);
 }
 ```
 
@@ -243,13 +244,13 @@ The `for...in` loop was designed for objects.
 
 ```text
 let car = {
-  make: "Ford",
-  model: "Mustang",
-  year: 1967
+    make: "Ford",
+    model: "Mustang",
+    year: 1967
 }
 
 for(let prop in car){
-  console.log(prop, car[prop]);
+    console.log(prop, car[prop]);
 }
 ```
 
@@ -262,7 +263,7 @@ The `for...of` loop was designed specifically for arrays:
 ```text
 const myPets = ['dog', 'cat', 'rat', 'snake'];
 for(let pet of myPets) {
-  console.log(pet);
+    console.log(pet);
 }
 ```
 
@@ -393,13 +394,13 @@ string[1];  // → b
 
 ```text
 function max(...numbers) {
-  let result = -Infinity;
-  for (let number of numbers) {
-    if (number > result) {
-      result = number;
+    let result = -Infinity;
+    for (let number of numbers) {
+        if (number > result) {
+            result = number;
+        }
     }
-  }
-  return result;
+    return result;
 }
 console.log(max(4, 1, 9, -2));
 // → 9
@@ -485,9 +486,9 @@ console.log(firstPet, secondPet);
 
 ```text
 {
-  "make": "Ford",
-  "model": "Edge",
-  "year": 2012
+    "make": "Ford",
+    "model": "Edge",
+    "year": 2012
 }
 ```
 

@@ -1,7 +1,8 @@
 ---
 marp: true
 theme: gaia
-footer: 'WEB230: Chapter 5: Higher-Order Functions'
+footer: ''
+oldfooter: 'WEB230: Chapter 5: Higher-Order Functions'
 paginate: true
 author: Phil Aylesworth
 date: 2018-02-03
@@ -33,7 +34,7 @@ _footer: ""
 
 ```text
 for (let i = 0; i < 10; i++) {
-  console.log(i);
+    console.log(i);
 }
 ```
 
@@ -49,9 +50,9 @@ repeatLog(numbers);
 
 ```text
 function repeatLog(n) {
-  for (let i = 0; i < n; i++) {
-    console.log(i);
-  }
+    for (let i = 0; i < n; i++) {
+        console.log(i);
+    }
 }
 ```
 
@@ -69,9 +70,9 @@ function repeatLog(n) {
 
 ```text
 function repeat(n, action) {
-  for (let i = 0; i < n; i++) {
-    action(i);
-  }
+    for (let i = 0; i < n; i++) {
+        action(i);
+    }
 }
 
 repeat(3, console.log);
@@ -105,7 +106,7 @@ console.log(labels);
 
 ```text
 function greaterThan(n) {
-  return function(m) { return m > n; };
+    return function(m) { return m > n; };
 }
 let greaterThan10 = greaterThan(10);
 console.log(greaterThan10(11));
