@@ -10,7 +10,11 @@ Author: Phil Aylesworth
 Date: 2021-11-16
 -->
 
-<!-- _class: lead -->
+<!--
+_class: invert lead
+_paginate: false
+_footer: ""
+-->
 
 # WEB230: JavaScript 1
 
@@ -184,7 +188,7 @@ three
 
 ---
 
-## `tabindex` Attribute continued ...
+## `tabindex` Attribute Continued …
 
 -  Most types of HTML elements cannot be focused
    -  make it focusable by adding a `tabindex` attribute

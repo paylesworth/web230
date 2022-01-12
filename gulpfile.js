@@ -5,7 +5,7 @@ const deleteLines = require('gulp-rm-lines');
 const rename = require('gulp-rename');
 const replace = require('gulp-replace');
 const frontMatter = require('gulp-front-matter');
-const cache = require('gulp-cache');
+// const cache = require('gulp-cache');
 // const run = require('gulp-run-command').default;
 const exec = require('child_process').exec;
 
@@ -25,14 +25,14 @@ function pdf() {
     .pipe(replace('<br>', ' ')) // breaks in headings
     .pipe(replace(/^```text/, '```javascript')) // change coding to JS
     .pipe(
-      cache(
-        markdownPdf({
-          cssPath: './pdf.css',
-          paperFormat: 'Letter',
-          paperBorder: '0.75in',
-          remarkable: { html: true }
-        })
-      )
+      // cache(
+      markdownPdf({
+        cssPath: './pdf.css',
+        paperFormat: 'Letter',
+        paperBorder: '0.75in',
+        remarkable: { html: true }
+      })
+      // )
     )
     .pipe(
       rename({
@@ -45,7 +45,7 @@ function pdf() {
 
 // Run Marp to generate the HTML slide presentations
 function marp(cb) {
-  exec('marp WEB*.md', function(err, stdout, stderr) {
+  exec('marp WEB*.md', function (err, stdout, stderr) {
     console.log(stdout);
     console.log(stderr);
     cb(err);
@@ -55,7 +55,7 @@ function marp(cb) {
 function clean(cb) {
   del.sync('WEB*.pdf');
   del.sync('WEB*.html');
-  cache.clearAll();
+  // cache.clearAll();
   return cb();
 }
 
