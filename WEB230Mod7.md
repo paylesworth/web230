@@ -1,356 +1,593 @@
 ---
 marp: true
+paginate: false
 theme: gaia
-footer: ''
-oldfooter: 'Module 7: The Secret Life of Objects'
-paginate: true
-Author: Phil Aylesworth
-Date: 2018-02-15
-Updated: 2019-11-24
 ---
 
 <!--
-_class: invert lead
-_paginate: false
-_footer: ""
+formatted for Marp
+Author: Phil Aylesworth
+Date: 2021-11-16
 -->
+
+<!-- _class: lead -->
 
 # WEB230: JavaScript 1
 
-## Module 7: The Secret Life of Objects
+# Module 7: Forms
 
 ---
 
-# Encapsulation
+<!-- footer: WEB230: Forms -->
+<!-- page_number: true -->
 
-- Object Oriented programming was developed in the 1970s and ’80s
-- the idea is to divide programs into smaller pieces
-- each piece is responsible for managing its own state
+## Forms
+
+-  Originally designed for the pre-JavaScript Web
+   -  Allow web sites to send user-submitted information to a server
+   -  Assumes that interaction with the server always navigates to a new page
+   -  That has changed with modern JS but we won't be covering that
 
 ---
 
-# Methods
+## DOM
 
-- properties that hold functions
+-  Form elements are part of the DOM
+   -  A number of properties and events that are not present on other elements
+   -  Make it possible to inspect and control form fields with JavaScript
+   -  Add new functionality to a form or use forms as building blocks in a JavaScript application
 
-```text
-let rabbit = {};
-rabbit.speak = function(line) {
-    console.log(`The rabbit says "${line}"`);
-};
+---
 
-rabbit.speak('Hello');
+## Form fields
+
+-  A web form consists of any number of input fields grouped in a `<form>` tag.
+-  HTML allows several different styles of fields:
+   -  simple on/off checkboxes
+   -  text input fields
+   -  drop-down menus
+   -  etc.
+
+---
+
+# `<input>` Fields
+
+-  Most form fields use the `<input>` tag
+-  The `type` attribute selects the field’s style
+-  Commonly used `<input>` types:
+
+   -  `text` A single-line text field
+   -  `password` Same as text but hides the text that is typed
+   -  `checkbox` An on/off switch
+   -  `radio` (Part of) a multiple-choice field
+   -  `file` Allows the user to choose a file from their computer
+
+---
+
+# Form-less fields
+
+-  Fields do not have to appear in a `<form>` tag
+-  Form-less fields cannot be submitted (only a form can)
+-  Can use them with JavaScript
+-  JavaScript interface for such elements differs with the type of the element
+
+---
+
+## Example
+
+<!-- 01inputs.html -->
+
+```html
+<p><input type="text" value="abc" /> (text)</p>
+<p><input type="password" value="abc" /> (password)</p>
+<p><input type="checkbox" checked /> (checkbox)</p>
+<p>
+   <input type="radio" value="A" name="choice" />
+   <input type="radio" value="B" name="choice" checked />
+   <input type="radio" value="C" name="choice" /> (radio)
+</p>
+<p><input type="file" /> (file)</p>
 ```
 
 ---
 
-## this
+## `<textarea>` Field
 
-- usually a method needs to do something with the object
-- inside a function that is called as a method of an object, `this` refers to the object
+-  Multiline text field
+-  Requires a matching `</textarea>` closing tag
+-  uses the text content, instead of the `value` attribute, as starting text
 
-```text
-function speak(line) {
-    console.log(`The ${this.type} rabbit says "${line}"`);
-}
-let whiteRabbit = {
-    type: 'white',
-    speak: speak
-};
-whiteRabbit.speak('Oh, how late it is!');
+<!-- 02textarea.html -->
+
+```html
+<textarea>
+one
+two
+three
+</textarea>
 ```
 
 ---
 
-## Arrow Functions
+## `<select>` Field
 
-- arrow functions don't have their own `this`
-- instead they use `this` from the surrounding scope
+-  Used to create a field that allows the user to select from a number of predefined options
+-  Whenever the value of a form field changes, it will fire a "change" event
 
-```text
-const speak = line => {
-    console.log(`The ${this.type} rabbit says "${line}"`);
-}
-let whiteRabbit = {type: 'white', speak: speak};
+<!-- 03option.html -->
 
-whiteRabbit.speak('Oh, how late it is!');
-```
-
-- **dosen't work** - `this.type == undefined`
-
----
-
-# Classes
-
-- a class defines the shape of a type of object
-  - what methods and properties it has
-- objects based on a class are called an "instance" of the class
-
----
-
-# Prototypes
-
-- Even an empty object has properties:
-
-```text
-let empty = {};
-console.log(empty.toString);
-console.log(empty.toString());
-```
-
-- It has a method called `toString`
-
----
-
-- Objects have **prototypes**
-- `Object.getPrototypeOf()` will return the prototype of an object
-
-- `Object.prototype` is the base prototype of most objects
-- Other prototypes can be layered on top
-
-```text
-console.log(Object.getPrototypeOf([]) === Array.prototype);
-console.log(Object.getPrototypeOf(Array.prototype) === Object.prototype);
+```html
+<select>
+   <option>Pancakes</option>
+   <option>Pudding</option>
+   <option>Ice cream</option>
+</select>
 ```
 
 ---
 
-# Prototype
+## Focus
 
-- defines properties that are shared
-- properties that are different for each must be stored directly on the object
-
-```text
-let empty = {};
-console.log(empty.toString);
-// → function toString(){…}
-console.log(empty.toString());
-// → [object Object]
-```
-
-- JavaScript prototypes can be considered informal classes
+-  Form fields can get keyboard focus
+-  When clicked or activated they become the currently active element and wil get keyboard input
+-  You can type into a text field only when it is focused
+-  Other fields respond differently to keyboard events
+   -  `<select>` menu tries to move to the option that contains the text the user typed and responds to the arrow keys by moving its selection up and down
 
 ---
 
-## Constructors
+## Giving Focus
 
-- constructor functions create objects that derive from some shared prototype
-- calling a function with the `new` keyword in front of it causes it to be treated as a constructor
-- the constructor will have its `this` variable bound to a new object
-- the new object will be returned
+-  `.focus()` method moves focus to the DOM element it is called on
+-  `.blur()` method removes focus
+-  The value of `document.activeElement` corresponds to the currently focused element
 
 ---
 
-## Constructors Continued …
+## Example
 
-```text
-function Rabbit(type) {
-    this.type = type;
-}
+<!-- 04textinput.html -->
 
-let killerRabbit = new Rabbit('killer');
-let blackRabbit = new Rabbit('black');
-console.log(blackRabbit.type);
+```html
+<input type="text" />
+<script>
+   document.querySelector('input').focus();
+   console.log(document.activeElement.tagName);
+   // → INPUT
+   document.querySelector('input').blur();
+   console.log(document.activeElement.tagName);
+   // → BODY
+</script>
 ```
 
 ---
 
-## Constructors Continued …
+## `autofocus` Attribute
 
-- the constructor has a property named `prototype`
-  - holds a empty object that derives from `Object.prototype`
-  - every instance created with this constructor will have this object as its prototype
+-  HTML provides the `autofocus` attribute
+-  give that element focus when the page is opened
 
-```text
-Rabbit.prototype.speak = function(line) {
-    console.log(`The ${this.type} rabbit says "${line}"`);
-};
-blackRabbit.speak('Doom...');
+---
+
+## `tabindex` Attribute
+
+-  User can move the focus through the document by pressing the TAB key
+-  Can set the order in which elements receive focus with the `tabindex` attribute
+-  The following example document will let the focus jump from the text input to the OK button, rather than going through the help link first:
+
+<!-- 05tabindex.html -->
+
+```html
+<input type="text" tabindex="1" /> <a href=".">(help)</a>
+<button onclick="console.log('ok')" tabindex="2">OK</button>
 ```
 
 ---
 
-# Class Notation
+## `tabindex` Attribute continued ...
 
-- a JavaScript `class` is a constructor function
-- newer, less awkward notation
-- not supported in Internet Explorer
-
----
-
-## Class Notation Continued …
-
-- the `class` keyword starts the declaration
-- `constructor()` (optional) is the constructor function
-- methods can be declared _after_ the constructor
-  - don't use the `function` keyword
-  - these methods are put in the prototype
-  - can't declare properties inside a `class`
-- the `class` block is run in strict mode
+-  Most types of HTML elements cannot be focused
+   -  make it focusable by adding a `tabindex` attribute
+-  `tabindex="-1"` makes tabbing skip over an element
 
 ---
 
-## Class Notation Continued …
+## Disabled fields
 
-```text
-class Rabbit {
-    constructor(type) {
-        this.type = type;
-    }
-    speak(line) {
-        console.log(`The ${this.type} rabbit says "${line}"`);
-    }
-}
+-  Form fields can be disabled through their `disabled` attribute
+-  It is a boolean attribute (can be specified without value)
 
-let killerRabbit = new Rabbit('killer');
-let blackRabbit = new Rabbit('black');
+<!-- 06disabled.html -->
+
+```html
+<button>I'm all right</button> <button disabled>I'm out</button>
+```
+
+-  Disabled fields cannot be focused or changed
+-  Browsers display them as gray and faded
+
+---
+
+## The Form as a Whole
+
+-  Fields contained in a `<form>` element will have a `form` property
+   -  linking back to the form’s DOM element
+-  The `<form>` element has a property called `elements`
+   -  contains an array-like collection of the fields inside it
+-  The `name` attribute of a form field determines the way its value will be identified when the form is submitted
+-  Also used as a property name on the form’s `elements` property
+   -  acts both as an array (accessible by number) and an object (accessible by name)
+
+---
+
+### Example
+
+<!-- 07wholeform.html -->
+
+```html
+<form action="example/submit.html">
+   Name: <input type="text" name="name" /><br />
+   Password: <input type="password" name="password" /><br />
+   <button type="submit">Log in</button>
+</form>
+
+<script>
+   let form = document.querySelector('form');
+   console.log(form.elements[1].type);
+   // → password
+   console.log(form.elements.password.type);
+   // → password
+   console.log(form.elements.name.form === form);
+   // → true
+</script>
 ```
 
 ---
 
-## Overriding Derived Properties
+## Submit Button
 
-- If the object does not have a property it will look to the prototype
-- If we add a property (or method) earlier in the prototype chain, it will be used
-- also know as "Prototype Interference"
+-  A button with `type="submit"` will cause the form to be submitted
+-  Pressing ENTER when a form field is focused has the same effect
+-  Before that happens, a "submit" event is fired
+-  You can handle this event with JavaScript and prevent this default behavior by calling `.preventDefault()` on the event object
 
-```text
-Rabbit.prototype.teeth = 'small';
+---
 
-console.log(killerRabbit.teeth);
+## Example
 
-killerRabbit.teeth = 'long, sharp, and bloody';
+<!-- 08submit.html -->
 
-console.log(killerRabbit.teeth);
-console.log(blackRabbit.teeth);
+```html
+<form action="example/submit.html">
+   Value: <input type="text" name="value" />
+   <button type="submit">Save</button>
+</form>
+<script>
+   let form = document.querySelector('form');
+   form.addEventListener('submit', event => {
+      console.log('Saving value', form.elements.value.value);
+      event.preventDefault();
+   });
+</script>
 ```
 
 ---
 
-## `in` Operator
+## Intercepting `submit` Events
 
-- tells us if an object has access to a property
-- `in` evaluates to `true` if the property is present
+Why intercept the `submit` event?
 
-```text
-console.log('teeth' in blackRabbit);
-// true
-console.log('teeth' in killerRabbit);
-// true
+-  Form validation - verify that the values make sense and immediately show an error message
+-  Can disable submitting the form and have our program handle the input
+
+---
+
+## Text fields
+
+-  Fields created by `<input>` tags with a `type="text"`, `type="password"`, and `<textarea>` tags, share a common interface
+-  These DOM elements have a `value` property that holds their current content as a string
+-  Setting this property to another string changes the field’s content
+
+---
+
+## `selectionStart` and `selectionEnd`
+
+-  Provide information about the cursor and selection in the text
+-  When nothing is selected, these two properties hold the same number, indicating the position of the cursor
+-  0 indicates the start of the text, and 10 indicates the cursor is after the 10th character
+-  When part of the field is selected, the two properties will differ, giving us the start and end of the selected text.
+-  These properties may also be written to
+
+---
+
+## Example
+
+Imagine you are writing an article about Khasekhemwy but have some trouble spelling his name. The following code wires up a `<textarea>` tag with an event handler that, when you press F2, inserts the string “Khasekhemwy” for you.
+
+---
+
+<!-- 09selection.html -->
+
+```html
+<textarea></textarea>
+<script>
+   let textarea = document.querySelector('textarea');
+   textarea.addEventListener('keydown', event => {
+      if (event.keyCode == 113) {
+         // The key code for F2
+         replaceSelection(textarea, 'Khasekhemwy');
+         event.preventDefault();
+      }
+   });
+   function replaceSelection(field, word) {
+      let from = field.selectionStart,
+         to = field.selectionEnd;
+      field.value = field.value.slice(0, from) + word + field.value.slice(to);
+      field.selectionStart = from + word.length; // Put the cursor after the word
+      field.selectionEnd = from + word.length;
+   }
+</script>
 ```
 
 ---
 
-## `.hasOwnProperty()` Method
+### Explanation of Example
 
-- check if a property belongs to the object but **not** on it's prototype
-- `.hasOwnProperty()` returns `true` if the property is on the object
+-  `replaceSelection`
 
-```text
-console.log(blackRabbit.hasOwnProperty('teeth'));
-// true
-console.log(killerRabbit.hasOwnProperty('teeth'));
-// false
+   -  replaces the currently selected part of a text field with the given word an
+   -  then moves the cursor after that word
 
+-  The `keydown` event fires when a key is pressed
+
+---
+
+## `change` Event
+
+-  The `change` event for a text field fires when the field loses focus after its content was changed
+
+-  To respond immediately to changes in a text field, you should register a handler for the `input` event
+   -  fires every time the user types a character, deletes text, or otherwise changes the field’s content
+
+---
+
+## Counter Example
+
+The following example shows a text field and a counter displaying the current length of the text in the field:
+
+<!-- 10counter.html -->
+
+```html
+<input type="text" /> length: <span id="length">0</span>
+<script>
+   let text = document.querySelector('input');
+   let output = document.querySelector('#length');
+   text.addEventListener('input', () => {
+      output.textContent = text.value.length;
+   });
+</script>
 ```
 
 ---
 
-## `for…in` Loop
+## Checkboxes and Radio Buttons
 
-- `for…in` will loop through properties of an object
+-  A checkbox field is a binary toggle
+-  Get value from `checked` property - Boolean value
 
-```text
-for( let prop in blackRabbit ) {
-    console.log(prop, blackRabbit[prop]);
-}
+<!-- 11checkbox.html -->
+
+```html
+<label> <input type="checkbox" id="purple" /> Make this page purple </label>
+<script>
+   let checkbox = document.querySelector('#purple');
+   checkbox.addEventListener('change', () => {
+      document.body.style.background = checkbox.checked ? 'mediumpurple' : '';
+   });
+</script>
 ```
 
 ---
 
-# Polymorphism
+## `<label>` Tag
 
-- polymorphism is when a method or an operator does different things on different data types
-- JavaScript methods can be polymorphic
-- Eg. all values have a method `.toString()`
-  - `.toString()` is used to convert values to strings
-- We can write our own `.toString()`, to work with our object
+-  Associates a piece of document with an input field
+-  Clicking anywhere on the label will activate the field
+   -  text field - focuses it
+   -  checkbox or radio button - toggles its value
 
 ---
 
-# Polymorphism Continued …
+## Radio Buttons
 
-```text
-class Rabbit {
-    ...
-    toString() {
-        return this.type + ' rabbit';
-    }
-}
+-  A radio button is similar to a checkbox
+-  implicitly linked to other radio buttons with the same name
+-  only one of them can be active at any time
+
+---
+
+## Example
+
+<!-- 12radio.html -->
+
+```html
+Color:
+<label> <input type="radio" name="color" value="orange" /> Orange </label>
+<label> <input type="radio" name="color" value="lightgreen" /> Green </label>
+<label> <input type="radio" name="color" value="lightblue" /> Blue </label>
+<script>
+   let buttons = document.querySelectorAll('[name=color]');
+   for (let button of buttons) {
+      button.addEventListener('change', () => {
+         document.body.style.background = button.value;
+      });
+   }
+</script>
 ```
 
 ---
 
-# Getters and Setters
+## `select` fields
 
-- Often need to control setting or getting values of a property
-- This created the style of writing getter and setter methods
+-  Conceptually similar to radio buttons
+   -  allow the user to choose from a set of options
+-  appearance of a `<select>` tag is determined by browser
 
 ---
 
-## Getters and Setters Continued …
+## `multiple` Attribute
 
-```text
-class Temperature {
-    constructor(celsius) {
-        this.celsius = celsius;
-    }
-    getFahrenheit() {
-        return this.celsius * 1.8 + 32;
-    }
-    setFahrenheit(value) {
-        this.celsius = (value - 32) / 1.8;
-    }
-}
+-  Select fields variant that is more like a list of checkboxes
+-  With `multiple` attribute, a `<select>` tag will allow the user to select any number of options
 
-let temp = new Temperature(22);
-console.log(temp.getFahrenheit());
+---
+
+## `select` field Value
+
+-  Each `<option>` tag has a value
+   -  This value can be defined with a `value` attribute
+   -  When not given, the text inside the option will count as its value
+-  The value property of a `<select>` element reflects the currently selected option
+
+---
+
+## `option` Tag
+
+-  The `<option>` tags can be accessed as an array-like object using `options` property
+-  Each option has a bolean property called `selected`
+   -  Indicates whether that option is currently selected
+   -  Can also be written to select or deselect an option
+
+---
+
+## Example
+
+Hold control (or command on a Mac) to select multiple options.
+
+<!-- 13select.html -->
+
+```html
+<select multiple>
+   <option value="1">0001</option>
+   <option value="2">0010</option>
+   <option value="4">0100</option>
+   <option value="8">1000</option>
+</select>
+= <span id="output">0</span>
+<script>
+   let select = document.querySelector('select');
+   let output = document.querySelector('#output');
+   select.addEventListener('change', () => {
+      let number = 0;
+      for (let option of select.options) {
+         if (option.selected) {
+            number += Number(option.value);
+         }
+      }
+      output.textContent = number;
+   });
+</script>
 ```
 
 ---
 
-## JavaScript has Getters and Setters
+## `file` Field
 
-- JavaScript has built-in getters and setters
-- Act like properties but call methods
+-  `file` field was designed to upload files from the user
+-  Also provides a way to read such files from JavaScript programs
+-  The field acts as a gatekeeper
+   -  It gives the browser permission to read the file
+-  A `file` field is a button labeled with “Choose File” or “Browse”, with information about the chosen file next to it
 
 ---
 
-## Getters and Setters Continued …
+## Example
 
-```text
-class Temperature {
-    constructor(celsius) {
-        this.celsius = celsius;
-    }
-    get fahrenheit() {
-        return this.celsius * 1.8 + 32;
-    }
-    set fahrenheit(value) {
-        this.celsius = (value - 32) / 1.8;
-    }
-}
+<!-- 14file.html -->
 
-let temp = new Temperature(22);
-console.log(temp.fahrenheit);
+```html
+<input type="file" />
+<script>
+   let input = document.querySelector('input');
+   input.addEventListener('change', () => {
+      if (input.files.length > 0) {
+         let file = input.files[0];
+         console.log('You chose', file.name);
+         if (file.type) console.log('It has type', file.type);
+      }
+   });
+</script>
 ```
 
 ---
 
-<!--
-_class: lead
-_footer: ""
-_paginate: false
--->
+## `file` field Properties
+
+-  `.files` - an array-like object containing the files chosen in the field
+
+   -  It is initially empty
+   -  Also support a `multiple` attribute, which makes it possible to select multiple files
+
+-  Objects in `files` have properties such as `name`, `size`, and `type`
+
+-  Does not have is a property that contains the content of the file
+   -  Getting at that is a little more involved
+
+---
+
+## Storing Data Client-Side
+
+-  `localStorage` object is used to store data in a way that survives page reloads
+-  Allows you to store string values under names
+
+---
+
+## Adding items to `localstorage`
+
+-  Add items with `localStorage.setItem(name, value)`
+-  `name` and `value` are strings
+
+---
+
+## Reading items from `localstorage`
+
+-  Read items with `localStorage.getItem(name)`
+-  `name` is a strings
+-  Returns a string with the value
+
+---
+
+## Removing items from `localstorage`
+
+-  Remains in the browser until it is overwritten
+   -  It can be removed with `localStorage.removeItem(name)`
+   -  Or if the user clears their local data
+
+---
+
+## Example
+
+<!-- 15localstorage.html -->
+
+```javascript
+localStorage.setItem('username', 'marijn');
+console.log(localStorage.getItem('username'));
+// → marijn
+localStorage.removeItem('username');
+```
+
+---
+
+## `localstorage` Details
+
+-  Can only store strings
+-  Sites from different domains get different storage compartments
+-  A website can only read its own data
+-  Limit to the data stored per site
+   -  Prevents using too much space
+
+---
+
+<!-- _class: lead -->
 
 # ☀
