@@ -22,25 +22,25 @@ _footer: ""
 
 # Values
 
-- Any small bit of data
-- Each value has a type
+-  Any small bit of data
+-  Each value has a type
 
 ---
 
 ## JavaScript has 6 types of values:
 
-- numbers
-- strings
-- booleans
-- objects
-- functions
-- undefined / null
+-  numbers
+-  strings
+-  booleans
+-  objects
+-  functions
+-  undefined / null
 
 ---
 
 ## Numbers
 
-- only one kind of number
+-  only one kind of number
 
 ```text
 13
@@ -52,18 +52,18 @@ _footer: ""
 
 ### Arithmetic Operators
 
-- `+` Addition
-- `-` Subtraction
-- `*` Multiplication
-- `/` Division
-- `%` Modulus (remainder)
-- `**` Exponent
+-  `+` Addition
+-  `-` Subtraction
+-  `*` Multiplication
+-  `/` Division
+-  `%` Remainder (Modulus)
+-  `**` Exponent
 
 ---
 
 ### Arithmetic
 
-- JS has arithmetic operators
+-  JS has arithmetic operators
 
 ```text
 100 + 4 * 11
@@ -73,19 +73,19 @@ _footer: ""
 
 ### Special Numbers
 
-- 3 special values considered numbers
-- don't behave like numbers - Don't trust these too much:
-  - `Infinity`
-  - `-Infinity`
-- If the operation results are not meaningful:
-  - `NaN` - not a number
+-  3 special values considered numbers
+-  don't behave like numbers - Don't trust these too much:
+   -  `Infinity`
+   -  `-Infinity`
+-  If the operation results are not meaningful:
+   -  `NaN` - not a number
 
 ---
 
 ## Strings
 
-- Represent text
-- Zero or more characters stored as a single value
+-  Represent text
+-  Zero or more characters stored as a single value
 
 ```text
 "Mary's car is red."
@@ -93,15 +93,15 @@ _footer: ""
 `Back ticks are called "template literals"`
 ```
 
-- single or double quotes behave very much the same
-  — only difference is in which type of quote you need to escape
+-  single or double quotes behave very much the same
+   — only difference is in which type of quote you need to escape
 
 ---
 
 ## Strings Escaping
 
-- some special characters need a backslash
-  - newline is "\\n", tab is "\\t"
+-  some special characters need a backslash
+   -  newline is "\\n", tab is "\\t"
 
 ```text
 "This is the first line\nAnd this is the second"
@@ -116,9 +116,9 @@ And this is the second
 
 ---
 
-## Strings Escaping Continued
+## Strings Escaping Continued …
 
-- if you need to display a special character use "\\"
+-  if you need to display a special character use "\\"
 
 ```text
 "A newline character is written like \"\\n\"."
@@ -134,8 +134,8 @@ A newline character is written like "\n".
 
 ## String Operator
 
-- There is only one:
-  - `+` Concatenation - Join two strings together
+-  There is only one:
+   -  `+` Concatenation - Join two strings together
 
 ```text
 "Patch my boat " + "with chewing gum"
@@ -151,9 +151,9 @@ will result in:
 
 ## Template Literals
 
-- Backtick-quoted strings, called _template literals_, can do more than single or double quoted strings:
-  - span lines
-  - embed other values
+-  Backtick-quoted strings, called _template literals_, can do more than single or double quoted strings:
+   -  span lines
+   -  embed other values
 
 ```text
 `Strings can
@@ -163,9 +163,9 @@ lines`
 
 ---
 
-## Template Literals Continued
+## Template Literals Continued …
 
-- an expression inside `${}` will be evaluated, converted to a string, and included at that position
+-  an expression inside `${}` will be evaluated, converted to a string, and included at that position
 
 ```javascript
 let number = 100;
@@ -182,49 +182,52 @@ half of 100 is 50
 
 ## Unary Operators
 
-- operate on a single value
-- Some operators are words:
-  - `typeof` - produces a string naming the type
-- Others:
-  - `-` negate (number)
-  - `!` not (bolean)
+-  operate on a single value
+-  Some operators are words:
+   -  `typeof` - produces a string naming the type
+-  Others:
+   -  `-` negate (number)
+   -  `+` plus (number)
+   -  `!` not (bolean)
 
 ---
 
 ## Boolean Values
 
-- has just two values
-- `true` or `false`
+-  has just two values
+-  `true` or `false`
 
 ---
 
 ### Comparison
 
-- `>` and `<` result in boolean values
+-  `>` and `<` result in boolean values
 
 ```text
 5 > 2          // true
 "abc" > "def"  // false
 ```
 
-- `>=` Greater than or equal
-- `<=` Less than or equal
-- `==` Equal
-- `!=` Not Equal
+-  `>=` Greater than or equal
+-  `<=` Less than or equal
+-  `==` Equal
+-  `!=` Not Equal
 
 ---
 
 ### Logical Operators
 
-- `&&` AND
-- `||` OR
-- `!` NOT
+These work with boolean values
+
+-  `&&` AND
+-  `||` OR
+-  `!` NOT
 
 ---
 
 ### Ternary Operator
 
-- takes 3 values
+-  takes 3 values
 
 ```text
 true ? 1 : 2   // 1
@@ -235,19 +238,19 @@ false ? 1 : 2  // 2
 
 ## Empty Values
 
-- The absense of value
-- `null`
-- `undefined`
-- If something does not produce a meaningful result it will produce `undefined`
-- `null` has a slightly different meaning that we will see later
+-  The absense of value
+-  `null`
+-  `undefined`
+-  If something does not produce a meaningful result it will produce `undefined`
+-  `null` has a slightly different meaning that we will see later
 
 ---
 
 ## Automatic Type Conversion
 
-- JavaScript will do it's best to work with what you give it.
-- Sometimes it has to convert from one type to another
-- called **type coercion**
+-  JavaScript will do it's best to work with what you give it.
+-  Sometimes it has to convert from one type to another
+-  called **type coercion**
 
 ```text
 "one" + 2  // "one2"
@@ -258,18 +261,18 @@ false ? 1 : 2  // 2
 
 ### Truthy and Falsy
 
-- If a boolean value is expected
-- `0`, `""`, `undefined`, `null`, `NaN` are `false`
-- anything else is `true`
+-  If a boolean value is expected
+-  `0`, `""`, `undefined`, `null`, `NaN` are `false`
+-  anything else is `true`
 
 ---
 
 ### Precise Compare
 
-- Sometimes we want to make sure they are the same **type** too!
-- `===` precisely equal (value and type)
-- `!==` precisely not equal
-- It is recommended to use these instead of `==` and `!=`
+-  Usually we want to make sure they are the same **type** too!
+-  `===` precisely equal (value and type)
+-  `!==` precisely not equal
+-  It is recommended to use these instead of `==` and `!=`
 
 ```text
 "2" == 2   // true
@@ -280,8 +283,8 @@ false ? 1 : 2  // 2
 
 ### Short-circuiting of logical operators
 
-- logical operators `&&` and `||`
-- The second value is only evaluated if needed
+-  logical operators `&&` and `||`
+-  The second value is only evaluated if needed
 
 ```text
 true || console.log("Hello")
