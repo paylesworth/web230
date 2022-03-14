@@ -33,6 +33,27 @@ _footer: ""
 
 # Document Structure
 
+```html
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>My home page</title>
+   </head>
+   <body>
+      <h1>My home page</h1>
+      <p>Hello, I am Marijn and this is my home page.</p>
+      <p>
+         I also wrote a book! Read it
+         <a href="http://eloquentjavascript.net">here</a>.
+      </p>
+   </body>
+</html>
+```
+
+---
+
+# Document Structure
+
 ![inline](images/html-boxes.jpg)
 
 ---
@@ -71,7 +92,7 @@ _footer: ""
 
 # Trees (continued)
 
-![inline](images/html-tree.jpg)
+![inline](images/html-tree2.png)
 
 ---
 
@@ -117,8 +138,6 @@ _footer: ""
 let arrayish = { 0: 'one', 1: 'two', length: 2 };
 let array = Array.from(arrayish);
 ```
-
--  can also take a second argument that acts like a `.map()` callback
 
 ---
 
