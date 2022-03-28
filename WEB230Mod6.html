@@ -46,11 +46,11 @@ button.addEventListener(&#x27;click&#x27;, function() {
 <h2>Depricated Ways to add Event Handlers</h2>
 <ul>
 <li>There are older ways to add event handlers</li>
-<li><code>.onClick()</code> method on a selected element</li>
+<li><code>.onclick</code> property on a selected element</li>
 <li><code>onclick=&quot;&quot;</code> attribute in HTML</li>
 <li>JS methods and HTML properties exist for other events</li>
 <li>DO NOT USE THESE EVER!</li>
-<li>always ulse <code>.addEventListener()</code></li>
+<li>always use <code>.addEventListener()</code></li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="gaia" data-marpit-pagination="6" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
@@ -125,7 +125,7 @@ button.addEventListener(&#x27;click&#x27;, once);
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="gaia" data-marpit-pagination="11" data-marpit-pagination-total="28" style="--paginate:true;--theme:gaia;">
 <h2>Key Event Properties Continued …</h2>
-<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>document.body.addEventListener(&#x27;keydown&#x27;, function(event) {
+<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>window.addEventListener(&#x27;keydown&#x27;, function(event) {
   console.log(&#x27;Key pressed:&#x27;, event.key);
 });
 </span></span></foreignObject></svg></code></pre>
@@ -136,7 +136,7 @@ button.addEventListener(&#x27;click&#x27;, once);
 </ul>
 </li>
 </ul>
-<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>document.body.addEventListener(&#x27;keydown&#x27;, function(event) {
+<pre><code class="language-text"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>window.addEventListener(&#x27;keydown&#x27;, function(event) {
   if (event.repeat) { return; }
   console.log(&#x27;Key pressed:&#x27;, event.key);
 });
