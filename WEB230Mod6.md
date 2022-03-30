@@ -60,7 +60,8 @@ button.addEventListener('click', function() {
 - There are older ways to add event handlers
 - `.onclick` property on a selected element
 - `onclick=""` attribute in HTML
-- JS methods and HTML properties exist for other events
+- JS properties and HTML attributes exist for other events
+  - eg `onload`, `onmouseover`, `onkeydown`, etc.
 - DO NOT USE THESE EVER!
 - always use `.addEventListener()`
 
@@ -152,6 +153,16 @@ window.addEventListener('keydown', function(event) {
 
 ---
 
+## Mouse Button Event Order
+
+1. `mousedown`
+2. `mouseup`
+3. `click`
+4. `dblclick` - if applicable
+   - `dblclick` will repeat the previous three twice
+
+---
+
 ## Mouse Clicks Continued …
 
 - `event.button` takes into account user customization
@@ -160,16 +171,6 @@ window.addEventListener('keydown', function(event) {
   - 2: Secondary button pressed, usually the right button
   - 3: Fourth button, typically the Browser Back button
   - 4: Fifth button, typically the Browser Forward button
-
----
-
-## Mouse Button Event Order
-
-1. `mousedown`
-2. `mouseup`
-3. `click`
-4. `dblclick` - if applicable
-   - `dblclick` will repeat the previous three twice
 
 ---
 
