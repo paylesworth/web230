@@ -317,8 +317,7 @@ three
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
   <span class="hljs-keyword">let</span> textarea = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&#x27;textarea&#x27;</span>);
   textarea.addEventListener(<span class="hljs-string">&#x27;keydown&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> {
-    <span class="hljs-keyword">if</span> (event.keyCode == <span class="hljs-number">113</span>) {
-      <span class="hljs-comment">// The key code for F2</span>
+    <span class="hljs-keyword">if</span> (event.key === <span class="hljs-string">&#x27;F2&#x27;</span>) {
       replaceSelection(textarea, <span class="hljs-string">&#x27;Khasekhemwy&#x27;</span>);
       event.preventDefault();
     }

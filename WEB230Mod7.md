@@ -317,8 +317,7 @@ Imagine you are writing an article about Khasekhemwy but have some trouble spell
 <script>
   let textarea = document.querySelector('textarea');
   textarea.addEventListener('keydown', (event) => {
-    if (event.keyCode == 113) {
-      // The key code for F2
+    if (event.key === 'F2') {
       replaceSelection(textarea, 'Khasekhemwy');
       event.preventDefault();
     }
